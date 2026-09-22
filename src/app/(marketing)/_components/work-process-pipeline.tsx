@@ -183,16 +183,11 @@ export function WorkProcessPipeline({
                 transition={{ duration: shouldReduceMotion ? 0 : 0.2 }}
               >
                 <Card
-                  className={cn(
-                    "bg-[color:var(--effect-surface)] shadow-none transition-colors duration-300",
-                    isHighlighted
-                      ? "bg-[image:var(--effect-positive)] ring-eyebrow/25"
-                      : "ring-foreground/8",
-                  )}
+                  className="bg-white shadow-sm ring-foreground/6"
                   size="sm"
                 >
                   <CardHeader className="gap-2 sm:px-5 sm:py-4">
-                    <CardTitle className="text-lg font-semibold">
+                    <CardTitle className="text-xl font-semibold group-data-[size=sm]/card:text-xl sm:text-2xl sm:group-data-[size=sm]/card:text-2xl">
                       {step.title}
                     </CardTitle>
                     <CardDescription className="leading-6 text-pretty sm:leading-7">

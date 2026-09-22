@@ -274,6 +274,8 @@ export const homeContent = {
   faq: {
     eyebrow: "FAQ",
     heading: "Najczęściej zadawane pytania",
+    description:
+      "Krótkie odpowiedzi o działaniu asystenta, bezpieczeństwie danych i wdrożeniu w placówce.",
     items: [
       {
         id: "ai-disclosure",

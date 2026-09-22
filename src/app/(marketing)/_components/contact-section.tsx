@@ -14,39 +14,39 @@ export function ContactSection() {
     <Section
       id="kontakt"
       aria-labelledby="contact-heading"
-      className="border-t border-foreground/6 bg-background py-[clamp(3.5rem,6vw,6rem)]"
+      className="relative isolate -mx-2 -mt-16 bg-[image:var(--contact-background-image)] pt-[calc(clamp(3.5rem,6vw,6rem)+4rem)] pb-[clamp(3.5rem,6vw,6rem)] sm:-mx-3 lg:-mx-4"
     >
       <Container className="max-w-[80rem]">
-        <RevealGroup className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
-          <RevealItem>
-            <SectionEyebrow className="justify-center">
-              {eyebrow}
-            </SectionEyebrow>
-          </RevealItem>
-          <RevealItem>
-            <h2
-              id="contact-heading"
-              className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl"
-            >
-              {heading}
-            </h2>
-          </RevealItem>
-          <RevealItem>
-            <p className="max-w-xl text-sm leading-6 text-pretty text-muted-foreground sm:text-base sm:leading-7">
-              {description}
-            </p>
-          </RevealItem>
-        </RevealGroup>
+        <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1.28fr)_minmax(0,0.72fr)] lg:gap-16">
+          <RevealGroup className="flex max-w-md flex-col gap-3 lg:order-2 lg:justify-self-end">
+            <RevealItem>
+              <SectionEyebrow>{eyebrow}</SectionEyebrow>
+            </RevealItem>
+            <RevealItem>
+              <h2
+                id="contact-heading"
+                className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl"
+              >
+                {heading}
+              </h2>
+            </RevealItem>
+            <RevealItem>
+              <p className="text-sm leading-6 text-pretty text-muted-foreground sm:text-base sm:leading-7">
+                {description}
+              </p>
+            </RevealItem>
+          </RevealGroup>
 
-        <RevealGroup className="mx-auto mt-10 max-w-3xl sm:mt-12">
-          <RevealItem>
-            <Card className="bg-white py-5 shadow-none ring-foreground/8 sm:py-6">
-              <CardContent className="px-4 sm:px-6">
-                <ContactForm />
-              </CardContent>
-            </Card>
-          </RevealItem>
-        </RevealGroup>
+          <RevealGroup className="lg:order-1">
+            <RevealItem>
+              <Card className="bg-white py-5 shadow-md shadow-eyebrow/10 ring-foreground/8 sm:py-6">
+                <CardContent className="px-4 sm:px-6">
+                  <ContactForm />
+                </CardContent>
+              </Card>
+            </RevealItem>
+          </RevealGroup>
+        </div>
       </Container>
     </Section>
   );

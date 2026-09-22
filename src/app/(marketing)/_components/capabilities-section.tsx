@@ -117,7 +117,7 @@ function CapabilityTile({
 }) {
   return (
     <Card
-      className="h-full bg-[color:var(--glass)] bg-[image:var(--glass-image)] shadow-sm ring-foreground/6 backdrop-blur-xl motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-out motion-safe:hover:-translate-y-1"
+      className="h-full bg-white shadow-sm ring-foreground/6 motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-out motion-safe:hover:-translate-y-1"
       size="sm"
     >
       <CardHeader>
