@@ -19,7 +19,7 @@ export function BenefitsSection() {
     <Section
       id="korzysci"
       aria-labelledby="benefits-heading"
-      className="relative isolate overflow-hidden border-t border-foreground/6 bg-[image:var(--benefits-background-image)] bg-cover bg-center py-[clamp(3.25rem,5vw,5rem)]"
+      className="relative isolate -mx-2 overflow-hidden border-t border-foreground/6 bg-[image:var(--benefits-background-image)] bg-cover bg-center py-[clamp(3.25rem,5vw,5rem)] sm:-mx-3 lg:-mx-4"
     >
       <Container className="relative z-10 max-w-[80rem]">
         <RevealGroup className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">

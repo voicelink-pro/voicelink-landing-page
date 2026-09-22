@@ -25,7 +25,7 @@ export function TryAssistantSection() {
     <Section
       id="jak-to-dziala"
       aria-labelledby="trial-heading"
-      className="relative isolate overflow-hidden border-t border-foreground/6 bg-background py-[clamp(1.75rem,3vw,3rem)]"
+      className="relative isolate -mx-2 overflow-hidden border-t border-foreground/6 bg-background py-[clamp(1.75rem,3vw,3rem)] sm:-mx-3 lg:-mx-4"
     >
       <div
         aria-hidden="true"
@@ -39,6 +39,7 @@ export function TryAssistantSection() {
           sizes="100vw"
           unoptimized
         />
+        <div className="absolute inset-0 bg-white/20" />
       </div>
       <Container className="relative z-10 max-w-[80rem]">
         <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-10">
@@ -53,7 +54,7 @@ export function TryAssistantSection() {
               </h2>
             </RevealItem>
             <RevealItem>
-              <p className="text-base leading-7 text-pretty text-muted-foreground sm:text-lg sm:leading-8">
+              <p className="text-base leading-7 text-pretty text-black sm:text-lg sm:leading-8">
                 {description}
               </p>
             </RevealItem>

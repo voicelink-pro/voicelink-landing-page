@@ -47,17 +47,16 @@ export function VoiceLinkCenterSection() {
         </RevealGroup>
 
         <RevealGroup>
-          <RevealItem className="relative mt-10 aspect-[16/9] overflow-hidden rounded-2xl bg-[color:var(--glass)] sm:mt-12">
-            <div className="absolute -inset-x-1 -top-1 bottom-0">
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                className="object-cover object-top"
-                sizes="(min-width: 1280px) 1280px, (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)"
-                unoptimized
-              />
-            </div>
+          <RevealItem className="mt-10 overflow-hidden rounded-2xl bg-white p-3 ring-1 ring-foreground/8 sm:mt-12 sm:p-4">
+            <Image
+              src={image.src}
+              alt={image.alt}
+              width={1687}
+              height={932}
+              className="h-auto w-full"
+              sizes="(min-width: 1280px) 1280px, (min-width: 640px) calc(100vw - 6rem), calc(100vw - 3.5rem)"
+              unoptimized
+            />
           </RevealItem>
         </RevealGroup>
 

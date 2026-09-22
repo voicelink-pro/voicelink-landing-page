@@ -9,7 +9,7 @@ const phoneHref = siteConfig.phone.replace(/[^\d+]/g, "");
 
 export function SiteFooter() {
   return (
-    <footer className="mt-2 border-t border-foreground/6 bg-white">
+    <footer className="-mx-2 mt-2 border-t border-foreground/6 bg-white sm:-mx-3 lg:-mx-4">
       <Container className="flex flex-col gap-8 py-8 sm:py-10">
         <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
           <div className="flex flex-col gap-4">
