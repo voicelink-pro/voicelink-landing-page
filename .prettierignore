@@ -2,3 +2,7 @@
 .pnpm-store
 node_modules
 pnpm-lock.yaml
+ANALIZA.md
+duna-original-extracted.css
+duna-style-base.css
+source-inventory.json

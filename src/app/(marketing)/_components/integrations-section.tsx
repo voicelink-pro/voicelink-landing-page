@@ -1,26 +1,31 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRightIcon } from "lucide-react";
 
 import { Container } from "@/components/layout/container";
-import { Section } from "@/components/layout/section";
-import { SectionEyebrow } from "@/components/layout/section-eyebrow";
-import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
-
-import { homeContent } from "../_content/home";
 import {
   RevealGroup,
   RevealItem,
   RevealList,
   RevealListItem,
-} from "./reveal-motion";
+} from "@/components/layout/reveal-motion";
+import { Section } from "@/components/layout/section";
+import { SectionEyebrow } from "@/components/layout/section-eyebrow";
+import { buttonVariants } from "@/components/ui/button";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+
+import { homeContent } from "../_content/home";
 
 const { eyebrow, heading, description, featured, items, more } =
   homeContent.integrations;
 
-const glassCardClassName =
-  "glass-surface overflow-visible bg-transparent ring-white/40 motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-out motion-safe:hover:-translate-y-1";
+const glassCardClassName = "overflow-visible bg-white shadow-none";
+
+const systemTileClassName = cn(
+  glassCardClassName,
+  "h-full min-h-[7.5rem] justify-center motion-safe:transition-[translate,box-shadow] motion-safe:duration-300 motion-safe:ease-out motion-safe:will-change-[translate] motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-[0_14px_28px_-16px_rgba(15,55,132,0.32)]",
+);
 
 const featuredLogo = {
   src: "/logo-osoz.png",
@@ -41,7 +46,7 @@ const integrationCards = [
   },
   {
     ...items[4],
-    logo: { src: "/wlasny.png", width: 1254, height: 1254 },
+    logo: { src: "/wlasny.webp", width: 1254, height: 1254 },
   },
 ] as const;
 
@@ -50,28 +55,30 @@ export function IntegrationsSection() {
     <Section
       id="integracje"
       aria-labelledby="integrations-heading"
-      className="relative isolate -mx-2 overflow-hidden border-t border-foreground/6 bg-[image:var(--integrations-background-image)] bg-cover bg-center py-[clamp(3.5rem,6vw,6rem)] sm:-mx-3 lg:-mx-4"
+      className="relative isolate overflow-hidden border-t border-border bg-[image:var(--integrations-background-image)] bg-cover bg-center"
     >
-      <Container className="max-w-[80rem] px-10 sm:px-16 lg:px-12">
-        <div className="grid items-start gap-x-10 gap-y-8 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-x-16">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[#020b24]/40"
+      />
+      <Container className="relative z-10">
+        <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-x-16">
           <RevealGroup className="flex max-w-xl flex-col gap-4 lg:gap-5">
             <RevealItem>
-              <SectionEyebrow className="text-white [&_img]:brightness-0 [&_img]:invert">
+              <SectionEyebrow className="bg-white/15 text-white [&_img]:brightness-0 [&_img]:invert">
                 {eyebrow}
               </SectionEyebrow>
             </RevealItem>
             <RevealItem>
               <h2
                 id="integrations-heading"
-                className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl"
+                className="section-title text-white"
               >
                 {heading}
               </h2>
             </RevealItem>
             <RevealItem>
-              <p className="text-base leading-7 text-pretty text-muted-foreground sm:text-lg sm:leading-8">
-                {description}
-              </p>
+              <p className="section-lede text-[#d5d5d5]">{description}</p>
             </RevealItem>
           </RevealGroup>
 
@@ -97,7 +104,7 @@ export function IntegrationsSection() {
                       />
                     </span>
                     <div className="flex min-w-0 flex-col gap-3">
-                      <CardTitle className="text-2xl font-semibold sm:text-3xl">
+                      <CardTitle className="subsection-title text-2xl sm:text-3xl">
                         {featured.title}
                       </CardTitle>
                       <ul className="flex flex-wrap gap-2">
@@ -118,13 +125,7 @@ export function IntegrationsSection() {
             <RevealList className="grid grid-cols-2 gap-3 sm:grid-cols-5 sm:gap-4">
               {integrationCards.map((item) => (
                 <RevealListItem key={item.title} className="h-full">
-                  <Card
-                    className={cn(
-                      glassCardClassName,
-                      "h-full min-h-[7.5rem] justify-center",
-                    )}
-                    size="sm"
-                  >
+                  <Card className={systemTileClassName} size="sm">
                     <CardHeader className="items-center justify-center justify-items-center gap-3 text-center">
                       {item.logo ? (
                         <span className="mx-auto flex size-12 items-center justify-center rounded-lg bg-white p-1.5 sm:size-14">
@@ -149,14 +150,16 @@ export function IntegrationsSection() {
             </RevealList>
             <RevealGroup>
               <RevealItem>
-                <Button
-                  className="h-auto justify-start px-0 text-base text-muted-foreground hover:text-muted-foreground"
-                  type="button"
-                  variant="link"
+                <Link
+                  className={cn(
+                    buttonVariants({ variant: "link" }),
+                    "h-auto justify-start px-0 text-base text-white hover:text-white",
+                  )}
+                  href={more.href}
                 >
                   {more.label}
                   <ArrowRightIcon data-icon="inline-end" />
-                </Button>
+                </Link>
               </RevealItem>
             </RevealGroup>
           </div>

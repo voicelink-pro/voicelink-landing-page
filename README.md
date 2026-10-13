@@ -33,7 +33,7 @@ Wszystkie kontrole można uruchomić poleceniem `pnpm check`.
 - Sekcje strony głównej: `src/app/(marketing)/_components/`
 - Kolory, promienie, szerokość kontenera i odstępy sekcji: `src/app/globals.css`
 - Tło strony: `public/background.png`
-- Logo w nawigacji: `public/logo-nowe.png`
+- Logo w nawigacji: `public/logo-white.png` na ciemnym tle, `public/logo-navy.png` na jasnym
 - Nagłówek i stopka: `src/components/layout/site-header.tsx` oraz `site-footer.tsx`
 - Nazwa i opis marki: `src/config/site.ts`
 - Wspólna nawigacja: `src/config/navigation.ts`

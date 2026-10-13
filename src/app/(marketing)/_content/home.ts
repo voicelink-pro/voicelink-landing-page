@@ -1,13 +1,13 @@
 export const homeContent = {
   hero: {
-    heading: "Odbieraj każde połączenie do Twojej placówki 24/7.",
+    heading: "Wirtualny Asystent Głosowy VoiceLink",
     description:
-      "VoiceLink to głosowy asystent AI dla placówek medycznych. Odbiera wiele połączeń jednocześnie, umawia, zmienia i odwołuje wizyty oraz odpowiada na pytania pacjentów, również po godzinach pracy recepcji.",
+      "VoiceLink to asystent głosowy AI dla placówek medycznych. Obsługuje wiele połączeń naraz, zarządza wizytami i odpowiada na pytania pacjentów – także poza godzinami pracy recepcji.",
     demo: {
       phoneLabel: "Numer telefonu",
       phonePlaceholder: "Numer telefonu",
       submitLabel: "Przetestuj",
-      note: "Bez zobowiązań. Zobaczysz działanie systemu na przykładzie swojej placówki.",
+      note: "Wpisz swój numer, a Asystent VoiceLink zadzwoni do Ciebie, abyś mógł go przetestować.",
     },
     stats: [
       {
@@ -25,47 +25,26 @@ export const homeContent = {
     ],
   },
   capabilities: {
-    eyebrow: "Funkcjonalności",
-    heading: "Co potrafi Wirtualny Asystent VoiceLink?",
+    eyebrow: "Asystent",
+    heading: "Czym jest Wirtualny Asystent VoiceLink?",
     description:
-      "Asystent VoiceLink jest wsparciem dla rejestracji w Twojej placówce. Przejmuje on większość powtarzalnych spraw, dzięki czemu pracownicy odzyskują czas, a pacjenci są zadowoleni ze sprawnej obsługi.",
-    items: [
-      {
-        title: "Zarządzanie wizytami",
-        description:
-          "Tworzenie, przekładanie i odwoływanie wizyt pacjentów dzięki połączeniu z kalendarzem placówki w czasie rzeczywistym.",
-      },
-      {
-        title: "Potwierdzenia i przypomnienia",
-        description:
-          "Asystent automatycznie wysyła SMS z potwierdzeniem umówionej wizyty, a kilka dni przed nią wysyła SMS przypominający.",
-      },
-      {
-        title: "Zamawianie recept",
-        description:
-          "Przyjmuje zgłoszenia o receptę i przekazuje je do zespołu placówki zgodnie z ustalonym procesem.",
-      },
-      {
-        title: "Udzielanie informacji na temat placówki",
-        description:
-          "Dzięki skonfigurowanej bazie wiedzy Asystent odpowiada na pytania dotyczące placówki, lekarzy oraz usług.",
-      },
-      {
-        title: "Inteligentny triaż",
-        description:
-          "Gdy pacjent nie jest pewien wyboru specjalisty, Asystent może zasugerować lekarza na podstawie podanych objawów.",
-      },
-      {
-        title: "Bezpośrednie przekierowanie do człowieka",
-        description:
-          "W nagłych sytuacjach Asystent płynnie przekierowuje rozmowę do osoby na rejestracji.",
-      },
-    ],
+      "VoiceLink to asystent głosowy AI, który odbiera telefony, umawia wizyty i odpowiada na pytania pacjentów. Działa zgodnie z zasadami Twojej placówki, wspierając rejestrację także po godzinach.",
+    listen: {
+      imageSrc: "/play.png",
+      audioSrc: "/test-call.mp3",
+      title: "Posłuchaj rozmowy pacjenta z Asystentem VoiceLink",
+      subtitle:
+        "Pacjent umawia wizytę u lekarza rodzinnego. Asystent sprawdza terminy i potwierdza rezerwację.",
+      playLabel: "Odtwórz nagranie",
+      pauseLabel: "Wstrzymaj",
+      unavailableMessage: "Nagranie nie jest jeszcze dostępne.",
+    },
     quote: {
       label: "Otrzymaj wycenę",
+      href: "/kontakt",
     },
     more: {
-      label: "Dowiedz się jak to działa.",
+      label: "Sprawdź możliwości VoiceLink.",
     },
   },
   benefits: {
@@ -74,11 +53,13 @@ export const homeContent = {
     description:
       "Zobacz, jak VoiceLink zmienia codzienną obsługę telefoniczną placówki.",
     beforeLabel: "Przed VoiceLink",
+    beforeHeading: "Każdy telefon angażuje Twój zespół.",
     afterLabel: "Z VoiceLink",
+    afterHeading: "Mniej telefonów. Więcej uwagi dla pacjentów.",
     items: [
       {
-        title: "Pacjent nie może się dodzwonić",
-        afterTitle: "Pomoc już po kilku sekundach",
+        title: "„Jesteś 24 w kolejce”",
+        afterTitle: "„Już sprawdzam dogodne terminy”",
       },
       {
         title: "Powtarzalne pytania zajmują czas rejestracji",
@@ -91,6 +72,10 @@ export const homeContent = {
       {
         title: "Negatywne opinie dotyczące obsługi",
         afterTitle: "Lepsze doświadczenie pacjenta",
+      },
+      {
+        title: "Ręczne wprowadzanie wizyt",
+        afterTitle: "Pełna automatyzacja kalendarza wizyt",
       },
     ],
   },
@@ -113,23 +98,34 @@ export const homeContent = {
       {
         title: "Przychodnie POZ",
         description:
-          "VoiceLink obsługuje najczęstsze sprawy pacjentów. Umawia, przekłada i odwołuje wizyty, przyjmuje prośby o receptę oraz odpowiada na podstawowe pytania.",
+          "VoiceLink umawia, przekłada i odwołuje wizyty, przyjmuje prośby o receptę oraz odpowiada na pytania pacjentów, odciążając codzienną pracę rejestracji.",
       },
       {
         title: "Placówki specjalistyczne",
         description:
-          "VoiceLink pomaga pacjentowi szybko trafić do odpowiedniego specjalisty i znaleźć właściwy termin. Obsługuje wiele kalendarzy, rozpoznaje cel rozmowy i prowadzi pacjenta przez cały proces rejestracji.",
+          "VoiceLink pomaga wybrać odpowiedniego specjalistę i dogodny termin. Obsługuje wiele kalendarzy oraz prowadzi pacjenta przez cały proces rejestracji.",
       },
       {
         title: "Szpitale i centra medyczne",
         description:
-          "VoiceLink może pełnić rolę pierwszej linii kontaktu. Obsługuje duży wolumen połączeń, a w pilnych sytuacjach może natychmiast przekierować rozmowę do człowieka.",
+          "VoiceLink obsługuje dużą liczbę połączeń i rozpoznaje potrzeby pacjentów. Udziela informacji, a w razie potrzeby przekierowuje rozmowę do pracownika.",
+      },
+      {
+        title: "Gabinety\nstomatologiczne",
+        description:
+          "VoiceLink umawia wizyty i przypomina o ich terminach. Odpowiada na pytania o usługi oraz pomaga pacjentom zmienić rezerwację, odciążając rejestrację.",
+      },
+      {
+        title: "Gabinety psychoterapeutyczne",
+        description:
+          "VoiceLink pomaga umówić pierwszą konsultację i kolejne sesje. Informuje o dostępnych terminach, przekłada wizyty oraz odpowiada na pytania organizacyjne.",
       },
     ],
     cta: {
       heading: "Nie wiesz, czy VoiceLink sprawdzi się w Twoim przypadku?",
       description: "Opowiedz nam o swoim modelu działania.",
       label: "Umów spotkanie",
+      href: "/kontakt",
     },
   },
   integrations: {
@@ -150,6 +146,7 @@ export const homeContent = {
     ],
     more: {
       label: "Nie ma Twojego systemu na liście?",
+      href: "/jak-to-dziala/integracja#brak-systemu",
     },
   },
   voiceLinkCenter: {
@@ -168,6 +165,7 @@ export const homeContent = {
     ],
     more: {
       label: "Poznaj wszystkie funkcjonalności VoiceLinkCenter.",
+      href: "/voicelink-center",
     },
   },
   security: {
@@ -199,77 +197,10 @@ export const homeContent = {
           "Polityka Data Retention pozwala kontrolować okres przechowywania danych, a Audit Logs rejestrują istotne działania w systemie, wspierając nadzór, rozliczalność i kontrolę dostępu.",
       },
     ],
-  },
-  workProcess: {
-    eyebrow: "Proces wdrożenia",
-    heading: "Jak pracujemy?",
-    description:
-      "Nie dostajesz gotowego bota. VoiceLink dopasowujemy do procesów, systemów i sposobu pracy Twojej placówki.",
-    steps: [
-      {
-        title: "Analiza",
-        description:
-          "Zaczynamy od poznania Twojej placówki. Analizujemy liczbę i charakter połączeń, najczęstsze potrzeby pacjentów, sposób pracy rejestracji oraz funkcjonalności, które powinien obsługiwać asystent. Na tej podstawie projektujemy zakres wdrożenia.",
-      },
-      {
-        title: "Konfiguracja",
-        description:
-          "Na podstawie przeprowadzonej analizy tworzymy asystenta dopasowanego do potrzeb placówki. Konfigurujemy jego zachowanie, scenariusze rozmów, bazę wiedzy, funkcje oraz zasady obsługi pacjentów. Proces trwa zazwyczaj od 1 do 4 tygodni, zależnie od zakresu projektu i dostępności wymaganych danych oraz dostępów.",
-      },
-      {
-        title: "Integracja",
-        description:
-          "Po uzyskaniu wymaganej dokumentacji i dostępów integrujemy VoiceLink z systemami wykorzystywanymi w placówce. Dzięki temu asystent może korzystać z aktualnych danych oraz realizować ustalone procesy bezpośrednio w środowisku, na którym pracuje Twój zespół.",
-      },
-      {
-        title: "Testy",
-        description:
-          "Przed uruchomieniem przekazujemy asystenta do testów. Twój zespół może przeprowadzić rzeczywiste scenariusze rozmów, sprawdzić sposób działania poszczególnych funkcji oraz zgłosić sytuacje wymagające dodatkowego dopracowania.",
-      },
-      {
-        title: "Start",
-        description:
-          "Rozpoczynamy miesięczny okres pilotażowy w rzeczywistym środowisku placówki. Analizujemy rozmowy, skuteczność obsługi, wykorzystanie poszczególnych funkcji, realne zużycie oraz zachowanie asystenta w sytuacjach, których nie da się w pełni przewidzieć podczas testów.",
-      },
-      {
-        title: "Optymalizacja",
-        description:
-          "Na podstawie danych z pilotażu dopracowujemy działanie VoiceLink. Rozwijamy scenariusze, eliminujemy słabsze punkty i optymalizujemy sposób prowadzenia rozmów tak, aby zwiększać skuteczność asystenta i jak najlepiej dopasować go do codziennej pracy placówki.",
-      },
-    ],
-    cta: {
-      label: "Umów spotkanie",
+    more: {
+      label: "Poznaj zasady bezpieczeństwa wdrożenia",
+      href: "/bezpieczenstwo",
     },
-  },
-  contact: {
-    eyebrow: "Kontakt",
-    heading: "Porozmawiajmy.",
-    description:
-      "Wypełnij formularz, a odezwiemy się do Ciebie, by wspólnie porozmawiać o korzyściach płynących z wdrożenia VoiceLink w Twojej placówce.",
-    fields: {
-      name: {
-        label: "Imię i nazwisko",
-        placeholder: "Imię i nazwisko",
-      },
-      phone: {
-        label: "Numer telefonu",
-        placeholder: "Numer telefonu",
-      },
-      facility: {
-        label: "Nazwa placówki",
-        placeholder: "Nazwa placówki",
-      },
-      email: {
-        label: "E-mail",
-        placeholder: "Adres e-mail",
-      },
-      message: {
-        label: "Wiadomość",
-        optional: "opcjonalnie",
-        placeholder: "W czym możemy pomóc?",
-      },
-    },
-    submitLabel: "Wyślij",
   },
   faq: {
     eyebrow: "FAQ",

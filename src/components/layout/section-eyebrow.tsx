@@ -13,7 +13,7 @@ export function SectionEyebrow({ children, className }: SectionEyebrowProps) {
   return (
     <p
       className={cn(
-        "flex items-center gap-1 text-[0.6875rem] font-medium tracking-[0.18em] text-eyebrow uppercase",
+        "inline-flex w-fit items-center gap-1.5 rounded-lg bg-muted px-2.5 py-1 text-xs font-medium tracking-[-0.01em] text-eyebrow",
         className,
       )}
     >
@@ -22,7 +22,7 @@ export function SectionEyebrow({ children, className }: SectionEyebrowProps) {
         alt=""
         width={siteConfig.eyebrowIcon.width}
         height={siteConfig.eyebrowIcon.height}
-        className="-mr-1 h-4 w-auto"
+        className="h-3.5 w-auto"
         sizes="20px"
         unoptimized
       />

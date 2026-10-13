@@ -1,30 +1,34 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRightIcon } from "lucide-react";
 
 import { Container } from "@/components/layout/container";
+import {
+  RevealGroup,
+  RevealItem,
+  RevealList,
+  RevealListItem,
+} from "@/components/layout/reveal-motion";
 import { Section } from "@/components/layout/section";
 import { SectionEyebrow } from "@/components/layout/section-eyebrow";
+import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 import { homeContent } from "../_content/home";
-import {
-  RevealGroup,
-  RevealItem,
-  RevealList,
-  RevealListItem,
-} from "./reveal-motion";
 
-const { eyebrow, heading, description, items } = homeContent.security;
+const { eyebrow, heading, description, items, more } = homeContent.security;
 
 const securityItems = [
-  { ...items[0], icon: "/rodo.png" },
-  { ...items[1], icon: "/szyfrowanie.png" },
-  { ...items[2], icon: "/kontrola.png" },
-  { ...items[3], icon: "/audyt.png" },
+  { ...items[0], icon: "/rodo.webp" },
+  { ...items[1], icon: "/szyfrowanie.webp" },
+  { ...items[2], icon: "/kontrola.webp" },
+  { ...items[3], icon: "/audyt.webp" },
 ] as const;
 
 export function SecuritySection() {
@@ -32,64 +36,73 @@ export function SecuritySection() {
     <Section
       id="bezpieczenstwo"
       aria-labelledby="security-heading"
-      className="border-t border-foreground/6 bg-background py-[clamp(3.5rem,6vw,6rem)]"
+      className="border-t border-border bg-background"
     >
-      <Container className="max-w-[80rem]">
-        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] lg:gap-16">
+      <Container>
+        <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-32">
           <RevealGroup className="flex max-w-xl flex-col gap-4 lg:gap-5">
             <RevealItem>
               <SectionEyebrow>{eyebrow}</SectionEyebrow>
             </RevealItem>
             <RevealItem>
-              <h2
-                id="security-heading"
-                className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl"
-              >
+              <h2 id="security-heading" className="section-title">
                 {heading}
               </h2>
             </RevealItem>
             {description.map((paragraph) => (
               <RevealItem key={paragraph}>
-                <p className="text-base leading-7 text-pretty text-muted-foreground sm:text-lg sm:leading-8">
-                  {paragraph}
-                </p>
+                <p className="section-lede">{paragraph}</p>
               </RevealItem>
             ))}
-          </RevealGroup>
-
-          <RevealGroup>
-            <RevealItem className="overflow-hidden rounded-2xl bg-[image:var(--security-background-image)] bg-cover bg-center p-3 ring-1 ring-foreground/8 sm:p-4 lg:p-5">
-              <RevealList className="grid gap-3 sm:gap-4" delay={0.04}>
-                {securityItems.map((item) => (
-                  <RevealListItem key={item.title}>
-                    <Card className="glass-surface bg-transparent ring-white/40">
-                      <CardHeader className="flex flex-row items-start gap-4">
-                        <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-white/40 ring-1 ring-white/60 backdrop-blur-xl">
-                          <Image
-                            src={item.icon}
-                            alt=""
-                            width={40}
-                            height={40}
-                            className="size-10 object-contain"
-                            sizes="40px"
-                            unoptimized
-                          />
-                        </span>
-                        <div className="flex min-w-0 flex-col gap-2">
-                          <CardTitle className="text-base font-semibold sm:text-lg">
-                            {item.title}
-                          </CardTitle>
-                          <CardDescription className="leading-6 text-pretty sm:leading-7">
-                            {item.description}
-                          </CardDescription>
-                        </div>
-                      </CardHeader>
-                    </Card>
-                  </RevealListItem>
-                ))}
-              </RevealList>
+            <RevealItem>
+              <Link
+                className={cn(
+                  buttonVariants({ variant: "link" }),
+                  "h-auto px-0 text-base text-eyebrow hover:text-eyebrow",
+                )}
+                href={more.href}
+              >
+                {more.label}
+                <ArrowRightIcon data-icon="inline-end" />
+              </Link>
             </RevealItem>
           </RevealGroup>
+
+          <div className="relative overflow-hidden rounded-[1.125rem] border border-white/20 bg-[image:var(--security-background-image)] bg-cover bg-center p-3 sm:p-3.5">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 bg-[#020b24]/50"
+            />
+            <RevealList className="relative grid gap-2" delay={0.04}>
+              {securityItems.map((item) => (
+                <RevealListItem key={item.title}>
+                  <Card className="border-0 bg-transparent text-white shadow-none [--card-spacing:--spacing(3.5)]">
+                    <CardHeader className="flex flex-row items-start gap-3.5">
+                      <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-white/10 ring-1 ring-white/25">
+                        <Image
+                          src={item.icon}
+                          alt=""
+                          width={20}
+                          height={20}
+                          className="size-5 object-contain brightness-0 invert"
+                          sizes="20px"
+                          unoptimized
+                        />
+                      </span>
+                      <div className="flex min-w-0 flex-col gap-1.5">
+                        <CardTitle className="text-base font-normal text-white">
+                          {item.title}
+                        </CardTitle>
+                        <CardDescription className="leading-6 text-pretty text-white">
+                          {item.description}
+                        </CardDescription>
+                      </div>
+                    </CardHeader>
+                  </Card>
+                </RevealListItem>
+              ))}
+            </RevealList>
+          </div>
         </div>
       </Container>
     </Section>

@@ -7,7 +7,10 @@ type SectionProps = ComponentProps<"section">;
 export function Section({ className, ...props }: SectionProps) {
   return (
     <section
-      className={cn("py-[var(--section-spacing)]", className)}
+      className={cn(
+        "border-t border-border bg-background py-[var(--section-spacing)]",
+        className,
+      )}
       {...props}
     />
   );

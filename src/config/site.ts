@@ -13,12 +13,19 @@ export const siteConfig = {
   phone: "+48 603 076 043",
   email: "kontakt@voicelink.pl",
   logo: {
-    src: "/logo-nowe.png",
-    width: 122,
-    height: 32,
+    navy: {
+      src: "/logo-navy.png",
+      width: 1800,
+      height: 303,
+    },
+    white: {
+      src: "/logo-white.png",
+      width: 1800,
+      height: 309,
+    },
   },
   eyebrowIcon: {
-    src: "/voicewave.png",
+    src: "/voicewave.webp",
     width: 25,
     height: 16,
   },

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import type { ReactNode } from "react";
 
+import { SmoothScroll } from "@/components/layout/smooth-scroll";
 import { siteConfig, siteUrl } from "@/config/site";
 
 import "./globals.css";
@@ -27,7 +28,10 @@ type RootLayoutProps = Readonly<{
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="pl" className={figtree.variable}>
-      <body className={figtree.className}>{children}</body>
+      <body className={figtree.className}>
+        <SmoothScroll />
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,0 +1,97 @@
+/* Czytelna rekonstrukcja stylu duna.com, analiza 2026-10-09.
+   To nie jest oryginalny arkusz Framera ani kompletna kopia strony.
+   Wymiary typografii, kolory i podstawowe odstępy pochodzą z pomiarów.
+   Selektory, organizacja, hover i uproszczona kompozycja są autorskie.
+   GT America wymaga własnego pliku fontu; bez niego używany jest fallback.
+*/
+:root {
+  --font: "GT America Regular", "Helvetica Neue", Arial, sans-serif;
+  --white: #ffffff;
+  --ink: #222221;
+  --heading: #1b0624;
+  --muted: #898683;
+  --button: #160f0c;
+  --surface: #f7f7f5;
+  --surface-active: #edece7;
+  --line: rgba(27, 6, 36, .1);
+  --content-max: 1200px;
+  --radius-card: 24px;
+  --radius-item: 16px;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--white); color: var(--ink); font-family: var(--font); -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+.duna-container { width: 100%; max-width: var(--content-max); margin-inline: auto; padding-inline: 40px; }
+.duna-section { padding-block: 128px; }
+.duna-divider { border-top: 1px solid var(--line); }
+.duna-nav { position: fixed; inset: 0 0 auto; z-index: 100; min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px 40px; }
+/* Klasa .is-scrolled ustawiana przez JS po przewinięciu. */
+.duna-nav.is-scrolled { background: rgba(255,255,255,.8); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); }
+.duna-nav__links { display: flex; align-items: center; gap: 2px; }
+.duna-nav__links a { padding: 6px 20px; border-radius: 999px; text-decoration: none; font-size: 16px; line-height: 24px; letter-spacing: -.01em; }
+.duna-nav__links a:hover { background: rgba(26,23,21,.05); }
+.duna-hero { position: relative; isolation: isolate; display: flex; align-items: flex-end; justify-content: center; min-height: 760px; height: 95vh; padding-inline: 80px; }
+/* Wstaw własną ilustrację przez element <img class="duna-hero__art">.
+   Gradient poniżej jest przybliżeniem przejścia obrazu w biel. */
+.duna-hero__art { position: absolute; z-index: -2; inset: 0; width: 100%; height: 94%; object-fit: cover; object-position: center; }
+.duna-hero::before { content: ""; position: absolute; z-index: -1; inset: 0; pointer-events: none; background: linear-gradient(to bottom, transparent 45%, rgba(255,255,255,.35) 62%, #fff 86%); }
+.duna-hero__content { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 40px; text-align: center; }
+.duna-hero__heading { max-width: 800px; margin: 0; font-size: 72px; line-height: 1; font-weight: 400; letter-spacing: -.06em; color: var(--ink); }
+.duna-hero__lead { max-width: 800px; margin: 32px 0 0; font-size: 24px; line-height: 1.4; letter-spacing: -.03em; color: var(--muted); }
+.duna-h2 { margin: 0; color: var(--heading); font-size: 44px; line-height: 1.1; font-weight: 400; letter-spacing: -.05em; }
+.duna-h3 { margin: 0; font-size: 40px; line-height: 1.2; font-weight: 400; letter-spacing: -.03em; }
+.duna-body { margin: 0; font-size: 16px; line-height: 24px; letter-spacing: -.01em; }
+.duna-description { margin: 16px 0 0; font-size: 20px; line-height: 1.4; letter-spacing: -.02em; color: var(--muted); }
+.duna-label { display: inline-flex; align-items: center; padding: 6px 10px; background: var(--surface); border-radius: 99px; font-size: 14px; line-height: 21px; }
+.duna-button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 24px; border: 0; border-radius: 999px; background: var(--button); color: #fff; font: inherit; font-size: 20px; line-height: 20px; letter-spacing: -.03em; text-decoration: none; cursor: pointer; transition: opacity .2s ease, transform .2s ease; }
+.duna-button:hover { opacity: .88; transform: translateY(-1px); }
+.duna-button:focus-visible, .duna-nav a:focus-visible, .duna-accordion summary:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+.duna-button--small { padding: 8px 14px; font-size: 16px; line-height: 20px; letter-spacing: -.01em; }
+.duna-button--outline { background: transparent; color: var(--ink); border: 1px solid var(--line); font-size: 16px; }
+.duna-button--light { background: #fff; color: var(--ink); font-size: 16px; }
+.duna-section__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; margin-bottom: 56px; }
+.duna-section__head .duna-h2 { max-width: 640px; }
+/* 1120px treści: 496px + 128px odstępu + 496px. */
+.duna-product-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 128px; align-items: center; }
+.duna-product-art { aspect-ratio: 1; overflow: hidden; border-radius: var(--radius-card); background: var(--surface-active); }
+.duna-product-art img { width: 100%; height: 100%; object-fit: cover; }
+.duna-accordion { border-radius: var(--radius-item); padding: 16px; }
+.duna-accordion[open] { background: var(--surface-active); }
+.duna-accordion + .duna-accordion { margin-top: 4px; }
+.duna-accordion summary { cursor: pointer; font-size: 20px; line-height: 28px; letter-spacing: -.02em; }
+.duna-accordion p { margin: 8px 0 0; font-size: 16px; line-height: 24px; letter-spacing: -.01em; }
+.duna-stats { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 32px; }
+.duna-stat__number { font-size: 80px; line-height: 1; font-weight: 500; }
+.duna-stat__label { margin-top: 16px; font-size: 18px; line-height: 1.2; letter-spacing: -.01em; }
+.duna-quote { margin: 0; padding: 64px; background: var(--surface); font-size: 32px; line-height: 1.2; letter-spacing: -.03em; }
+.duna-illustrated-band { padding: 128px 40px; background-color: #45848d; background-position: center; background-size: cover; color: #fff; text-align: center; }
+.duna-illustrated-band .duna-h2 { color: inherit; }
+.duna-footer { padding: 80px 40px 40px; background-color: #45848d; background-position: center; background-size: cover; color: #fff; }
+.duna-footer__columns { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 32px; }
+@media (720px <= width < 1200px) {
+  .duna-section { padding-block: 96px; }
+  .duna-h2 { font-size: 40px; }
+  .duna-product-grid { gap: 48px; }
+  .duna-hero { height: 90vh; }
+  .duna-footer__columns { grid-template-columns: repeat(3,minmax(0,1fr)); }
+}
+@media (720px <= width < 1000px) { .duna-hero__heading { font-size: 64px; } }
+@media (width < 720px) {
+  .duna-container { padding-inline: 24px; }
+  .duna-section { padding-block: 60px; }
+  .duna-nav { padding: 16px 24px; min-height: 68px; }
+  .duna-nav__links { display: none; } /* Dodaj własny przycisk menu mobilnego. */
+  .duna-hero { height: 90svh; min-height: 650px; padding: 0 24px 16px; }
+  .duna-hero__content { gap: 24px; }
+  .duna-hero__heading { font-size: 44px; line-height: 1.1; letter-spacing: -.04em; }
+  .duna-hero__lead { margin-top: 24px; font-size: 20px; }
+  .duna-h2 { font-size: 36px; }
+  .duna-h3 { font-size: 32px; }
+  .duna-section__head { flex-direction: column; }
+  .duna-product-grid, .duna-stats { grid-template-columns: 1fr; gap: 32px; }
+  .duna-stat__number { font-size: 56px; }
+  .duna-quote { padding: 24px; font-size: 26px; }
+  .duna-footer__columns { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (prefers-reduced-motion: reduce) { .duna-button { transition: none; } }

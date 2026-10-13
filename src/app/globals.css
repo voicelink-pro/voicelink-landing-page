@@ -11,6 +11,7 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-eyebrow: var(--eyebrow);
+  --color-benefit-before: var(--benefit-before);
   --color-destructive: var(--destructive);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
@@ -23,98 +24,64 @@
   --radius-md: calc(var(--radius) - 0.125rem);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 0.25rem);
+  --radius-2xl: 0.875rem;
+  --radius-3xl: 1.125rem;
+  --radius-4xl: 0.5rem;
 }
 
 :root {
-  --background: #f5f8ff;
-  --foreground: oklch(0.3 0.014 72);
-  --primary: oklch(0.26 0.016 72);
-  --primary-foreground: oklch(0.99 0.004 84);
-  --secondary: oklch(0.928 0.008 84);
-  --secondary-foreground: oklch(0.3 0.014 72);
-  --muted: oklch(0.938 0.007 84);
-  --muted-foreground: oklch(0.49 0.012 72);
-  --eyebrow: #96a0fb;
+  --background: #ffffff;
+  --foreground: #222221;
+  --primary: #0f3784;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f3f7;
+  --secondary-foreground: #222221;
+  --muted: #f7f7f5;
+  --muted-foreground: #6f706d;
+  --eyebrow: #0f3784;
+  --benefit-before: #d61f1f;
   --destructive: oklch(0.58 0.22 27);
-  --card: oklch(0.986 0.005 84);
-  --card-foreground: oklch(0.3 0.014 72);
-  --popover: oklch(0.986 0.005 84);
-  --popover-foreground: oklch(0.3 0.014 72);
-  --border: oklch(0.875 0.008 84);
-  --input: oklch(0.875 0.008 84);
-  --ring: oklch(0.55 0 0);
-  --radius: 0.625rem;
-  --container-width: 72rem;
-  --section-spacing: clamp(4rem, 10vw, 7rem);
+  --card: #f7f7f5;
+  --card-foreground: #222221;
+  --popover: #ffffff;
+  --popover-foreground: #222221;
+  --border: rgb(27 6 36 / 10%);
+  --input: rgb(27 6 36 / 14%);
+  --ring: #0f3784;
+  --radius: 0.75rem;
+  --container-width: 75rem;
+  --section-spacing: clamp(3.75rem, 8vw, 8rem);
   --page-background-image: url("/background.png");
+  --integration-hero-background-image: url("/background-5.png");
+  --functions-hero-background-image: url("/background-6.png");
+  --process-hero-background-image: url("/background-7.png");
+  --security-hero-background-image: url("/background-8.png");
+  --pricing-hero-background-image: url("/background-9.png");
+  --pricing-factors-background-image: url("/pricing-hero.png");
+  --duration-background-image: url("/harmonogram.png");
+  --monitoring-background-image: url("/voicelink-security.png");
+  --conversation-demo-background-image: url("/test-call.png");
   --integrations-background-image: url("/background-3.png");
-  --security-background-image: url("/background-3.png");
-  --benefits-background-image: url("/background-4.png");
-  --contact-background-image:
-    radial-gradient(
-      42rem 24rem at 22% 46%,
-      color-mix(in oklch, var(--eyebrow) 38%, transparent),
-      transparent 72%
-    ),
-    radial-gradient(
-      34rem 22rem at 84% 40%,
-      color-mix(in oklch, var(--eyebrow) 26%, transparent),
-      transparent 70%
-    ),
-    linear-gradient(
-      180deg,
-      var(--background) 0%,
-      var(--background) 22%,
-      color-mix(in oklch, var(--eyebrow) 8%, var(--background)) 52%,
-      color-mix(in oklch, var(--eyebrow) 14%, var(--background)) 78%,
-      color-mix(in oklch, var(--eyebrow) 14%, var(--background)) 100%
-    );
-  --faq-background-image: linear-gradient(
-    180deg,
-    color-mix(in oklch, var(--eyebrow) 14%, var(--background)) 0%,
-    color-mix(in oklch, var(--eyebrow) 14%, var(--background)) 12%,
-    color-mix(in oklch, var(--eyebrow) 6%, var(--background)) 38%,
-    var(--background) 68%
-  );
-  --page-shell-radius: clamp(1.25rem, 2.5vw, 2rem);
-  --page-shell-inset: 1rem;
-  --site-header-height: 6rem;
-  --glass: color-mix(in oklch, white 56%, transparent);
-  --glass-image: linear-gradient(
-    145deg,
-    color-mix(in oklch, white 70%, transparent),
-    color-mix(in oklch, var(--eyebrow) 4%, transparent)
-  );
-  --header-glass: color-mix(in oklch, white 48%, transparent);
-  --header-glass-image: linear-gradient(
-    145deg,
-    color-mix(in oklch, white 62%, transparent),
-    color-mix(in oklch, var(--eyebrow) 6%, transparent)
-  );
-  --capability-card: var(--glass);
-  --capability-card-glass: var(--glass-image);
-  --capability-icon-well: color-mix(in oklch, white 88%, var(--eyebrow));
+  --center-value-background-image: url("/voicelinkcenter-hero.png");
+  --security-background-image: url("/background.png");
+  --benefits-background-image: none;
+  --contact-background-image: url("/contact-background.png");
+  --faq-background-image: none;
+  --page-shell-radius: 1.125rem;
+  --page-shell-inset: 0rem;
+  --page-hero-height: 95svh;
+  --page-hero-compact-height: min(50rem, 88svh);
+  --site-header-height: 4.75rem;
+  --glass: rgb(255 255 255 / 88%);
+  --capability-card: var(--card);
+  --capability-icon-well: #ffffff;
 }
 
 .glass-surface {
-  background-color: var(--header-glass);
-  background-image: var(--header-glass-image);
+  background-color: var(--glass);
   box-shadow: none;
-  backdrop-filter: blur(1.25rem) saturate(140%);
-  -webkit-backdrop-filter: blur(1.25rem) saturate(140%);
-}
-
-@media (min-width: 40rem) {
-  :root {
-    --page-shell-inset: 1.5rem;
-    --site-header-height: 7rem;
-  }
-}
-
-@media (min-width: 64rem) {
-  :root {
-    --page-shell-inset: 2rem;
-  }
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 @layer base {
@@ -122,12 +89,9 @@
     @apply border-border;
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
-
   body {
     @apply min-h-dvh bg-background font-sans text-foreground antialiased;
+    letter-spacing: -0.01em;
   }
 
   :focus-visible {
@@ -140,8 +104,90 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+@layer components {
+  .display-title {
+    max-width: 52rem;
+    color: var(--foreground);
+    font-size: clamp(2.75rem, 6.1vw, 4.5rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.06em;
+    text-wrap: balance;
   }
+
+  .section-title {
+    color: var(--foreground);
+    font-size: clamp(2.25rem, 4.25vw, 2.75rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.05em;
+    text-wrap: balance;
+  }
+
+  .subsection-title {
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+  }
+
+  .section-lede {
+    color: var(--muted-foreground);
+    font-size: clamp(1rem, 1.7vw, 1.25rem);
+    line-height: 1.55;
+    letter-spacing: -0.02em;
+    text-wrap: pretty;
+  }
+
+  .editorial-panel {
+    border: 1px solid var(--border);
+    border-radius: 1.125rem;
+    background: var(--card);
+  }
+}
+
+@media (width < 45rem) {
+  :root {
+    --page-hero-height: 90svh;
+  }
+
+  .display-title {
+    font-size: 2.75rem;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+  }
+}
+
+.page-enter {
+  animation: page-enter 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes page-enter {
+  from {
+    translate: 0 0.25rem;
+  }
+
+  to {
+    translate: 0;
+  }
+}
+
+[data-header-snap],
+[data-header-snap] * {
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter {
+    animation: none;
+  }
+}
+
+.marketing-shell:has([data-contact-page]) > footer {
+  background-color: #062059;
+  padding: 0;
+}
+
+.marketing-shell:has([data-contact-page]) > footer > div {
+  border-radius: 0;
 }
