@@ -38,7 +38,7 @@ export function SharedCalendarSection() {
             </RevealItem>
           </RevealGroup>
           <RevealGroup>
-            <RevealItem className="relative overflow-hidden rounded-[1.125rem] bg-[url('/terminarz.png')] bg-cover bg-center">
+            <RevealItem className="relative overflow-hidden rounded-[1.125rem] bg-[url('/terminarz.webp')] bg-cover bg-center">
               <div
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-0 bg-[#020b24]/45"

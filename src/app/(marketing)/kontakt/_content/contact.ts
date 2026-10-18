@@ -9,8 +9,15 @@ export const contactContent = {
   description: "Wypełnij formularz, a odezwiemy się do Ciebie wkrótce.",
   form: {
     submit: "Wyślij",
+    sending: "Wysyłanie…",
     requiredError: "To pole jest wymagane.",
     emailError: "Podaj poprawny adres e-mail.",
+    phoneError: "Podaj 9 cyfr albo numer z prefiksem, np. +48 600 100 200.",
+    phoneHint: "9 cyfr albo numer z prefiksem, np. +48.",
+    submitError: "Nie udało się wysłać wiadomości. Spróbuj ponownie za chwilę.",
+    limitedError: "Za dużo prób. Spróbuj ponownie za kilka minut.",
+    successTitle: "Dziękujemy",
+    successDescription: "Wiadomość została wysłana. Odezwiemy się wkrótce.",
     fields: {
       firstName: { label: "Imię", autoComplete: "given-name" },
       lastName: { label: "Nazwisko", autoComplete: "family-name" },

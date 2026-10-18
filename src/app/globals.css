@@ -50,22 +50,24 @@
   --ring: #0f3784;
   --radius: 0.75rem;
   --container-width: 75rem;
-  --section-spacing: clamp(3.75rem, 8vw, 8rem);
-  --page-background-image: url("/background.png");
-  --integration-hero-background-image: url("/background-5.png");
-  --functions-hero-background-image: url("/background-6.png");
-  --process-hero-background-image: url("/background-7.png");
-  --security-hero-background-image: url("/background-8.png");
-  --pricing-hero-background-image: url("/background-9.png");
-  --pricing-factors-background-image: url("/pricing-hero.png");
-  --duration-background-image: url("/harmonogram.png");
-  --monitoring-background-image: url("/voicelink-security.png");
-  --conversation-demo-background-image: url("/test-call.png");
-  --integrations-background-image: url("/background-3.png");
-  --center-value-background-image: url("/voicelinkcenter-hero.png");
-  --security-background-image: url("/background.png");
+  --section-spacing: clamp(3rem, 7vw, 8rem);
+  --page-background-image: url("/background.webp");
+  --integration-hero-background-image: url("/background-5.webp");
+  --functions-hero-background-image: url("/background-6.webp");
+  --process-hero-background-image: url("/background-7.webp");
+  --security-hero-background-image: url("/background-8.webp");
+  --pricing-hero-background-image: url("/background-9.webp");
+  --calculator-background-image: url("/background-6.webp");
+  --blog-hero-background-image: url("/background-7.webp");
+  --pricing-factors-background-image: url("/pricing-hero.webp");
+  --duration-background-image: url("/harmonogram.webp");
+  --monitoring-background-image: url("/voicelink-security.webp");
+  --conversation-demo-background-image: url("/test-call.webp");
+  --integrations-background-image: url("/background-3.webp");
+  --center-value-background-image: url("/voicelinkcenter-hero.webp");
+  --security-background-image: url("/background.webp");
   --benefits-background-image: none;
-  --contact-background-image: url("/contact-background.png");
+  --contact-background-image: url("/contact-background.webp");
   --faq-background-image: none;
   --page-shell-radius: 1.125rem;
   --page-shell-inset: 0rem;
@@ -108,19 +110,19 @@
   .display-title {
     max-width: 52rem;
     color: var(--foreground);
-    font-size: clamp(2.75rem, 6.1vw, 4.5rem);
+    font-size: clamp(2rem, 5.2vw + 0.5rem, 4.5rem);
     font-weight: 400;
-    line-height: 1;
-    letter-spacing: -0.06em;
+    line-height: 1.04;
+    letter-spacing: -0.05em;
     text-wrap: balance;
   }
 
   .section-title {
     color: var(--foreground);
-    font-size: clamp(2.25rem, 4.25vw, 2.75rem);
+    font-size: clamp(1.65rem, 3.4vw + 0.45rem, 2.75rem);
     font-weight: 400;
-    line-height: 1.1;
-    letter-spacing: -0.05em;
+    line-height: 1.12;
+    letter-spacing: -0.045em;
     text-wrap: balance;
   }
 
@@ -133,7 +135,7 @@
 
   .section-lede {
     color: var(--muted-foreground);
-    font-size: clamp(1rem, 1.7vw, 1.25rem);
+    font-size: clamp(0.9375rem, 1.4vw + 0.25rem, 1.25rem);
     line-height: 1.55;
     letter-spacing: -0.02em;
     text-wrap: pretty;
@@ -149,11 +151,12 @@
 @media (width < 45rem) {
   :root {
     --page-hero-height: 90svh;
+    --site-header-height: 4.25rem;
   }
 
   .display-title {
-    font-size: 2.75rem;
-    line-height: 1.1;
+    font-size: clamp(1.875rem, 6.8vw, 2.5rem);
+    line-height: 1.08;
     letter-spacing: -0.04em;
   }
 }

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowRightIcon } from "lucide-react";
 
 import { Container } from "@/components/layout/container";
@@ -23,7 +24,7 @@ function PlanPrice({ price }: { price: PlanPriceData }) {
         <span className="text-sm leading-6 text-muted-foreground">
           {price.prefix}
         </span>
-        <span className="subsection-title text-4xl tracking-[-0.05em] text-foreground sm:text-5xl">
+        <span className="subsection-title text-3xl tracking-[-0.05em] text-foreground sm:text-4xl lg:text-5xl">
           {price.value}
         </span>
         <span className="text-sm leading-6 text-muted-foreground">
@@ -66,7 +67,7 @@ export function PricingPlansSection() {
           {items.map((item, index) => (
             <RevealListItem
               key={item.title}
-              className="flex flex-col gap-6 rounded-3xl border border-border bg-white p-6 ring-foreground/6 sm:p-8 lg:row-span-3 lg:grid lg:grid-rows-subgrid"
+              className="flex flex-col gap-5 rounded-2xl border border-border bg-white p-5 ring-foreground/6 sm:gap-6 sm:rounded-3xl sm:p-7 lg:row-span-3 lg:grid lg:grid-rows-subgrid lg:p-8"
             >
               <div className="flex flex-col gap-3">
                 <span
@@ -95,9 +96,9 @@ export function PricingPlansSection() {
 
         <RevealGroup className="mt-12 sm:mt-16">
           <RevealItem>
-            <button
+            <Link
               className="group/savings section-title inline-block max-w-4xl cursor-pointer text-left text-primary"
-              type="button"
+              href={savingsCta.href}
             >
               <span className="underline decoration-transparent decoration-[0.06em] underline-offset-[0.16em] transition-colors duration-200 group-hover/savings:decoration-primary group-focus-visible/savings:decoration-primary">
                 {savingsCta.label}
@@ -106,7 +107,7 @@ export function PricingPlansSection() {
                 aria-hidden="true"
                 className="ml-3 inline-block size-[0.78em] align-[-0.08em] motion-safe:transition-transform motion-safe:duration-200 motion-safe:group-hover/savings:translate-x-1"
               />
-            </button>
+            </Link>
           </RevealItem>
         </RevealGroup>
       </Container>

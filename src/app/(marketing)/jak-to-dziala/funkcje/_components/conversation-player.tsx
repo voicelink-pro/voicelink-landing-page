@@ -58,7 +58,7 @@ export function ConversationPlayer({
   }
 
   return (
-    <div className="flex w-full max-w-md flex-col items-center gap-4">
+    <div className="flex w-full max-w-xs flex-col items-center gap-3 sm:max-w-md sm:gap-4">
       <audio
         ref={audioRef}
         preload="metadata"
@@ -80,7 +80,7 @@ export function ConversationPlayer({
         onTimeUpdate={updateProgress}
       />
       <Button
-        className="h-11 bg-white px-6 text-base text-black hover:bg-white/90"
+        className="h-10 bg-white px-5 text-sm text-black hover:bg-white/90 sm:h-11 sm:px-6 sm:text-base"
         onClick={() => void handlePlayback()}
         size="lg"
         type="button"

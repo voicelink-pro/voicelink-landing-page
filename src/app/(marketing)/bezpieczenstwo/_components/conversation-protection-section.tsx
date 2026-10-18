@@ -50,7 +50,7 @@ export function ConversationProtectionSection() {
           {protectionItems.map((item, index) => (
             <RevealListItem
               key={item.title}
-              className="grid items-start gap-5 py-8 first:pt-0 last:pb-0 sm:grid-cols-[4rem_minmax(0,0.78fr)_minmax(0,1.22fr)] sm:gap-8 lg:gap-12"
+              className="grid items-start gap-4 py-6 first:pt-0 last:pb-0 sm:py-8 md:grid-cols-[4rem_minmax(0,0.78fr)_minmax(0,1.22fr)] md:gap-8 lg:gap-12"
             >
               <SecurityIcon className="brightness-0 invert" icon={item.icon} />
               <div className="flex flex-col gap-2">

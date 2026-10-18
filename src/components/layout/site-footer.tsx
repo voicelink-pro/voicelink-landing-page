@@ -12,8 +12,8 @@ import { siteConfig } from "@/config/site";
 
 const phoneHref = siteConfig.phone.replace(/[^\d+]/g, "");
 
-const solutions = mainNavigation[0];
-const howItWorks = mainNavigation[1];
+const assistant = mainNavigation[0];
+const rollout = mainNavigation[1];
 
 type FooterLink = {
   label: string;
@@ -33,22 +33,22 @@ function linksWithHref(
   );
 }
 
+const pageLinks = mainNavigation.flatMap((item) =>
+  "items" in item || !("href" in item) ? [] : [item],
+);
+
 const footerColumns: readonly FooterColumn[] = [
   {
-    title: solutions.label,
-    links: linksWithHref(solutions.items),
+    title: assistant.label,
+    links: linksWithHref(assistant.items),
   },
   {
-    title: howItWorks.label,
-    links: linksWithHref(howItWorks.items),
+    title: rollout.label,
+    links: linksWithHref(rollout.items),
   },
   {
     title: "Placówka",
-    links: [
-      { label: "Bezpieczeństwo", href: "/bezpieczenstwo" },
-      { label: "VoiceLinkCenter", href: "/voicelink-center" },
-      { label: "Cennik", href: "/cennik" },
-    ],
+    links: pageLinks,
   },
 ];
 

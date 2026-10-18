@@ -33,10 +33,15 @@ export function ProcessStepsTimeline({
   const [activeStep, setActiveStep] = useState(-1);
   const { scrollYProgress } = useScroll({
     target: lineRef,
-    offset: ["start 80%", "end 80%"],
+    offset: ["start 48%", "end 80%"],
   });
 
   const updateActiveStep = useCallback((latest: number) => {
+    if (latest <= 0) {
+      setActiveStep(-1);
+      return;
+    }
+
     const nextStep = checkpointProgress.current.reduce(
       (current, threshold, index) =>
         latest >= threshold - 0.015 ? index : current,
@@ -134,8 +139,8 @@ export function ProcessStepsTimeline({
 
               <div
                 className={cn(
-                  "grid items-start gap-4 sm:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] sm:gap-8 lg:gap-12",
-                  !isLast && "pb-12 sm:pb-16",
+                  "grid items-start gap-4 md:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] md:gap-8 lg:gap-12",
+                  !isLast && "pb-10 sm:pb-14 lg:pb-16",
                 )}
               >
                 <div className="flex flex-col gap-3">

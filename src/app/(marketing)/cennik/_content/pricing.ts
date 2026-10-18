@@ -28,6 +28,7 @@ export const pricingContent = {
     note: "Wszystkie podane ceny są cenami brutto.",
     savingsCta: {
       label: "Oblicz potencjalne oszczędności po wdrożeniu VoiceLink",
+      href: "/kalkulator-oszczednosci",
     },
     items: [
       {

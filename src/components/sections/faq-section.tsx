@@ -35,7 +35,7 @@ export function FaqSection({
       className="scroll-mt-[var(--site-header-height)] border-t border-border bg-background"
     >
       <Container>
-        <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-32">
+        <div className="grid items-start gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-24 xl:gap-32">
           <RevealGroup className="flex max-w-md flex-col gap-3">
             <RevealItem>
               <SectionEyebrow>{eyebrow}</SectionEyebrow>
@@ -56,12 +56,12 @@ export function FaqSection({
                 <RevealItem key={item.id}>
                   <AccordionItem
                     value={item.id}
-                    className="overflow-hidden rounded-2xl border-0 bg-muted px-4 shadow-none"
+                    className="overflow-hidden rounded-2xl border-0 bg-muted px-3.5 shadow-none sm:px-4"
                   >
-                    <AccordionTrigger className="py-4 text-base leading-6 font-normal tracking-[-0.02em] text-balance">
+                    <AccordionTrigger className="py-3.5 text-sm leading-6 font-normal tracking-[-0.02em] text-balance sm:py-4 sm:text-base">
                       {item.question}
                     </AccordionTrigger>
-                    <AccordionContent className="pr-6 pb-2.5 text-sm leading-6 text-pretty text-muted-foreground">
+                    <AccordionContent className="pr-4 pb-2.5 text-sm leading-6 text-pretty text-muted-foreground sm:pr-6">
                       <p>{item.answer}</p>
                     </AccordionContent>
                   </AccordionItem>

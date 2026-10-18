@@ -17,8 +17,8 @@ export const centerContent = {
     image: {
       src: "/voicelinkcenter.png",
       alt: "Pulpit VoiceLink Center ze statystykami połączeń, minut, skuteczności i umówionych wizyt.",
-      width: 1687,
-      height: 932,
+      width: 3420,
+      height: 1894,
     },
     imageCaption: "Przykładowy widok pulpitu VoiceLink Center.",
   },

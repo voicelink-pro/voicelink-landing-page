@@ -12,7 +12,7 @@ export function FamiliarSystemSection() {
     <Section aria-labelledby="familiar-system-heading" className="bg-muted">
       <Container>
         <RevealGroup>
-          <RevealItem className="relative grid items-start gap-6 overflow-hidden rounded-[1.125rem] bg-[url('/rejestracja.png')] bg-cover bg-center px-6 py-12 sm:min-h-[26rem] sm:px-10 sm:py-16 lg:min-h-[30rem] lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] lg:items-center lg:gap-16 lg:px-12">
+          <RevealItem className="relative grid items-start gap-6 overflow-hidden rounded-[1.125rem] bg-[url('/rejestracja.webp')] bg-cover bg-center px-6 py-12 sm:min-h-[26rem] sm:px-10 sm:py-16 lg:min-h-[30rem] lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] lg:items-center lg:gap-16 lg:px-12">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute inset-0 bg-[#020b24]/60"

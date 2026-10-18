@@ -45,11 +45,11 @@ export function CenterHeroSection() {
             <RevealItem>
               <p className="section-lede max-w-3xl text-white">{description}</p>
             </RevealItem>
-            <RevealItem>
+            <RevealItem className="w-full sm:w-auto">
               <Link
                 className={cn(
                   buttonVariants({ size: "lg" }),
-                  "h-12 bg-black px-7 text-base text-white hover:bg-black/85",
+                  "h-11 w-full bg-black px-5 text-sm text-white hover:bg-black/85 sm:h-12 sm:w-auto sm:px-7 sm:text-base",
                 )}
                 href={cta.href}
               >

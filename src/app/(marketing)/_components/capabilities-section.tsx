@@ -21,9 +21,9 @@ export function CapabilitiesSection() {
       className="border-t border-border bg-background py-[clamp(2.75rem,5vw,4.5rem)]"
     >
       <Container>
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-x-24 lg:gap-y-5">
+        <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,25rem)] lg:gap-x-16 lg:gap-y-4 xl:grid-cols-[minmax(0,1fr)_minmax(0,27rem)] xl:gap-x-24">
           <RevealGroup
-            className="flex max-w-xl flex-col gap-5 lg:col-start-1 lg:row-start-1"
+            className="flex max-w-xl flex-col gap-4 sm:gap-5 lg:col-start-1 lg:row-start-1"
             delay={0.05}
           >
             <RevealItem>
@@ -47,7 +47,7 @@ export function CapabilitiesSection() {
               </Button>
             </RevealItem>
           </RevealGroup>
-          <div className="min-w-0 lg:col-start-2 lg:row-start-1">
+          <div className="w-full max-w-md min-w-0 lg:col-start-2 lg:row-start-1 lg:max-w-none">
             <RevealGroup>
               <RevealItem>
                 <CapabilitiesPlayer
@@ -65,7 +65,7 @@ export function CapabilitiesSection() {
           <RevealGroup className="lg:col-start-2 lg:row-start-2">
             <RevealItem>
               <Button
-                className="h-auto justify-start px-0 text-base text-eyebrow hover:text-eyebrow"
+                className="h-auto justify-start px-0 text-sm text-eyebrow hover:text-eyebrow sm:text-base"
                 type="button"
                 variant="link"
               >

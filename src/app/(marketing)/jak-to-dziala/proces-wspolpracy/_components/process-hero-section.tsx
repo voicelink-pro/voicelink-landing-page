@@ -19,7 +19,7 @@ export function ProcessHeroSection() {
       className="-mt-[calc(var(--site-header-height)-0.75rem)] border-0 bg-background px-3 pt-0 pb-3 sm:px-4 sm:pb-4 lg:px-5 lg:pb-5"
       data-page-hero="compact"
     >
-      <div className="relative flex min-h-[calc(var(--page-hero-height)-1.5rem)] flex-col overflow-hidden rounded-[clamp(1.15rem,1.6vw,1.6rem)] bg-[image:var(--process-hero-background-image)] bg-cover bg-center pt-[calc(var(--site-header-height)-0.75rem)] sm:min-h-[calc(var(--page-hero-height)-1.75rem)] lg:min-h-[calc(var(--page-hero-height)-2rem)]">
+      <div className="relative flex min-h-[calc(var(--page-hero-height)-1.5rem)] flex-col overflow-hidden rounded-[clamp(1.15rem,1.6vw,1.6rem)] bg-[image:var(--process-hero-background-image)] bg-cover bg-center pt-[calc(var(--site-header-height)+1.25rem)] pb-8 sm:min-h-[calc(var(--page-hero-height)-1.75rem)] sm:pt-[calc(var(--site-header-height)+2rem)] sm:pb-12 lg:min-h-[calc(var(--page-hero-height)-2rem)]">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 bg-[#020b24]/30"
@@ -51,7 +51,7 @@ export function ProcessHeroSection() {
               <Link
                 className={cn(
                   buttonVariants({ size: "lg" }),
-                  "h-12 bg-black px-7 text-base text-white hover:bg-black/85",
+                  "h-11 bg-black px-5 text-sm text-white hover:bg-black/85 sm:h-12 sm:px-7 sm:text-base",
                 )}
                 href={cta.href}
               >
@@ -60,7 +60,7 @@ export function ProcessHeroSection() {
               <Link
                 className={cn(
                   buttonVariants({ size: "lg" }),
-                  "h-12 bg-black px-7 text-base text-white hover:bg-black/85",
+                  "h-11 bg-black px-5 text-sm text-white hover:bg-black/85 sm:h-12 sm:px-7 sm:text-base",
                 )}
                 href={stepsLink.href}
               >

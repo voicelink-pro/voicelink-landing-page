@@ -21,10 +21,76 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: new URL("/przetestuj", siteUrl).toString(),
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: new URL("/cennik", siteUrl).toString(),
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+    },
+    {
+      url: new URL("/kalkulator-oszczednosci", siteUrl).toString(),
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: new URL("/blog", siteUrl).toString(),
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: new URL(
+        "/blog/ile-kosztuja-nieodebrane-telefony-w-placowce-medycznej",
+        siteUrl,
+      ).toString(),
+      lastModified: new Date("2026-10-17"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: new URL(
+        "/blog/jak-odciazyc-rejestracje-medyczna",
+        siteUrl,
+      ).toString(),
+      lastModified: new Date("2026-10-17"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: new URL("/blog/voicebot-w-placowce-medycznej", siteUrl).toString(),
+      lastModified: new Date("2026-10-17"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: new URL(
+        "/blog/jak-ograniczyc-nieobecnosci-pacjentow",
+        siteUrl,
+      ).toString(),
+      lastModified: new Date("2026-10-17"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: new URL("/blog/ile-kosztuje-voicebot-medyczny", siteUrl).toString(),
+      lastModified: new Date("2026-10-17"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: new URL(
+        "/blog/wdrozenie-asystenta-glosowego-w-placowce-medycznej",
+        siteUrl,
+      ).toString(),
+      lastModified: new Date("2026-10-17"),
+      changeFrequency: "monthly",
+      priority: 0.7,
     },
     {
       url: new URL("/voicelink-center", siteUrl).toString(),

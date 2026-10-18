@@ -39,7 +39,7 @@ export function SecuritySection() {
       className="border-t border-border bg-background"
     >
       <Container>
-        <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-32">
+        <div className="grid items-start gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-20 xl:gap-32">
           <RevealGroup className="flex max-w-xl flex-col gap-4 lg:gap-5">
             <RevealItem>
               <SectionEyebrow>{eyebrow}</SectionEyebrow>

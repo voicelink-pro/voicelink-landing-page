@@ -24,7 +24,7 @@ const glassCardClassName = "overflow-visible bg-white shadow-none";
 
 const systemTileClassName = cn(
   glassCardClassName,
-  "h-full min-h-[7.5rem] justify-center motion-safe:transition-[translate,box-shadow] motion-safe:duration-300 motion-safe:ease-out motion-safe:will-change-[translate] motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-[0_14px_28px_-16px_rgba(15,55,132,0.32)]",
+  "h-full min-h-[6.25rem] justify-center motion-safe:transition-[translate,box-shadow] motion-safe:duration-300 motion-safe:ease-out motion-safe:will-change-[translate] motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-[0_14px_28px_-16px_rgba(15,55,132,0.32)] sm:min-h-[7rem]",
 );
 
 const featuredLogo = {
@@ -85,32 +85,27 @@ export function IntegrationsSection() {
           <div className="flex flex-col gap-3 sm:gap-4">
             <RevealGroup>
               <RevealItem>
-                <Card
-                  className={cn(
-                    glassCardClassName,
-                    "min-h-[12rem] justify-center sm:min-h-[14rem]",
-                  )}
-                >
-                  <CardHeader className="gap-5 sm:flex-row sm:items-center sm:gap-6">
-                    <span className="flex h-16 w-[11.5rem] shrink-0 items-center justify-center rounded-xl bg-white px-3 sm:h-[4.5rem] sm:w-52">
+                <Card className={cn(glassCardClassName, "justify-center")}>
+                  <CardHeader className="gap-4 sm:flex-row sm:items-center sm:gap-6">
+                    <span className="flex h-12 w-36 shrink-0 items-center justify-center rounded-xl bg-white px-2 sm:h-[4.25rem] sm:w-48 sm:px-3">
                       <Image
                         src={featuredLogo.src}
                         alt=""
                         width={featuredLogo.width}
                         height={featuredLogo.height}
-                        className="h-10 w-auto object-contain sm:h-11"
-                        sizes="208px"
+                        className="h-8 w-auto object-contain sm:h-10"
+                        sizes="192px"
                         unoptimized
                       />
                     </span>
-                    <div className="flex min-w-0 flex-col gap-3">
-                      <CardTitle className="subsection-title text-2xl sm:text-3xl">
+                    <div className="flex min-w-0 flex-col gap-2.5 sm:gap-3">
+                      <CardTitle className="subsection-title text-xl sm:text-2xl lg:text-3xl">
                         {featured.title}
                       </CardTitle>
-                      <ul className="flex flex-wrap gap-2">
+                      <ul className="flex flex-wrap gap-1.5 sm:gap-2">
                         {featured.systems.map((system) => (
                           <li key={system}>
-                            <span className="inline-flex rounded-lg bg-foreground/4 px-3 py-1.5 text-sm text-muted-foreground">
+                            <span className="inline-flex rounded-lg bg-foreground/4 px-2.5 py-1 text-xs text-muted-foreground sm:px-3 sm:py-1.5 sm:text-sm">
                               {system}
                             </span>
                           </li>
@@ -122,25 +117,28 @@ export function IntegrationsSection() {
               </RevealItem>
             </RevealGroup>
 
-            <RevealList className="grid grid-cols-2 gap-3 sm:grid-cols-5 sm:gap-4">
+            <RevealList className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 md:grid-cols-5 lg:grid-cols-3 xl:grid-cols-5 xl:gap-3.5">
               {integrationCards.map((item) => (
-                <RevealListItem key={item.title} className="h-full">
+                <RevealListItem
+                  key={item.title}
+                  className="h-full max-sm:last:col-span-2"
+                >
                   <Card className={systemTileClassName} size="sm">
-                    <CardHeader className="items-center justify-center justify-items-center gap-3 text-center">
+                    <CardHeader className="items-center justify-center justify-items-center gap-2.5 px-3 text-center">
                       {item.logo ? (
-                        <span className="mx-auto flex size-12 items-center justify-center rounded-lg bg-white p-1.5 sm:size-14">
+                        <span className="mx-auto flex size-10 items-center justify-center rounded-lg bg-white p-1 sm:size-12">
                           <Image
                             src={item.logo.src}
                             alt=""
                             width={item.logo.width}
                             height={item.logo.height}
                             className="h-full w-full object-contain"
-                            sizes="56px"
+                            sizes="48px"
                             unoptimized
                           />
                         </span>
                       ) : null}
-                      <CardTitle className="text-sm font-semibold text-balance sm:text-base">
+                      <CardTitle className="text-xs font-semibold text-balance sm:text-sm">
                         {item.title}
                       </CardTitle>
                     </CardHeader>

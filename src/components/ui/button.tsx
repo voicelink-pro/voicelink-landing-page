@@ -16,7 +16,7 @@ const buttonVariants = cva(
         ghost:
           "hover:bg-foreground/8 hover:text-foreground active:bg-foreground/8 active:text-foreground aria-expanded:bg-foreground/8 aria-expanded:text-foreground",
         destructive: `bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 ${buttonLift}`,
-        link: "text-primary underline-offset-4 hover:underline",
+        link: " whitespace-normal text-left text-pretty text-primary underline-offset-4 hover:underline",
       },
       size: {
         default:

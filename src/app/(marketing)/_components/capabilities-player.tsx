@@ -82,16 +82,16 @@ export function CapabilitiesPlayer({
 
   return (
     <figure
-      className="relative flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-3xl border border-white/15 bg-primary bg-cover bg-center p-6 text-white sm:p-8 lg:aspect-square"
+      className="relative flex min-h-[16.5rem] flex-col justify-end overflow-hidden rounded-2xl border border-white/15 bg-primary bg-cover bg-center p-5 text-white sm:min-h-[18.5rem] sm:rounded-3xl sm:p-6 lg:aspect-[10/9] lg:min-h-[21rem] lg:p-7"
       style={{ backgroundImage: `url("${imageSrc}")` }}
     >
       <div aria-hidden="true" className="absolute inset-0 bg-black/40" />
-      <figcaption className="relative flex flex-col items-center gap-5 text-center">
-        <div className="flex max-w-sm flex-col gap-2">
-          <p className="text-2xl leading-tight font-normal tracking-[-0.03em] text-balance text-white">
+      <figcaption className="relative flex flex-col items-center gap-3.5 text-center sm:gap-4">
+        <div className="flex max-w-xs flex-col gap-1.5 sm:max-w-sm sm:gap-2">
+          <p className="text-lg leading-snug font-normal tracking-[-0.03em] text-balance text-white sm:text-xl lg:text-2xl lg:leading-tight">
             {title}
           </p>
-          <p className="text-sm leading-6 text-pretty text-white/80">
+          <p className="text-xs leading-5 text-pretty text-white/80 sm:text-sm sm:leading-6">
             {subtitle}
           </p>
         </div>
@@ -118,7 +118,7 @@ export function CapabilitiesPlayer({
           onTimeUpdate={updateProgress}
         />
         <Button
-          className="bg-white text-foreground hover:bg-white/90"
+          className="h-10 bg-white px-4 text-sm text-foreground hover:bg-white/90 sm:h-11 sm:px-5"
           onClick={() => void handlePlayback()}
           type="button"
         >
@@ -129,7 +129,7 @@ export function CapabilitiesPlayer({
           )}
           {isPlaying ? pauseLabel : playLabel}
         </Button>
-        <div className="flex w-full max-w-xs flex-col gap-2">
+        <div className="flex w-full max-w-[15rem] flex-col gap-1.5 sm:max-w-xs sm:gap-2">
           <div
             aria-label="Postęp nagrania"
             aria-valuemax={100}

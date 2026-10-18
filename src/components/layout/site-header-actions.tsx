@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { SheetClose } from "@/components/ui/sheet";
 import { headerActions } from "@/config/navigation";
 import { cn } from "@/lib/utils";
@@ -12,9 +12,20 @@ type SiteHeaderActionsProps = {
 export function SiteHeaderActions({ className }: SiteHeaderActionsProps) {
   return (
     <div className={cn("flex items-center gap-2", className)}>
-      <Button className="h-9 px-4 text-foreground" variant="ghost">
+      <SheetClose
+        nativeButton={false}
+        render={
+          <a
+            className={cn(
+              buttonVariants({ size: "sm", variant: "ghost" }),
+              "h-9 px-4 text-foreground",
+            )}
+            href={headerActions.login.href}
+          />
+        }
+      >
         {headerActions.login.label}
-      </Button>
+      </SheetClose>
       <SheetClose
         nativeButton={false}
         render={

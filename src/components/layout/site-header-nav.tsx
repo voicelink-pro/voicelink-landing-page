@@ -14,6 +14,7 @@ import {
   comingSoonLabel,
   mainNavigation,
   type NavigationChild,
+  type NavigationItem,
 } from "@/config/navigation";
 import { cn } from "@/lib/utils";
 
@@ -46,9 +47,9 @@ export function SiteHeaderNav({
       closeDelay={150}
     >
       <NavigationMenuList>
-        {mainNavigation.map((item) =>
-          "items" in item ? (
-            <NavigationMenuItem key={item.href}>
+        {mainNavigation.map((item: NavigationItem) =>
+          item.items ? (
+            <NavigationMenuItem key={item.label}>
               <NavigationMenuTrigger className={triggerClass}>
                 {item.label}
               </NavigationMenuTrigger>
@@ -62,7 +63,7 @@ export function SiteHeaderNav({
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
-          ) : (
+          ) : item.href ? (
             <NavigationMenuItem key={item.href}>
               <NavigationMenuLink
                 className={itemClass}
@@ -70,6 +71,16 @@ export function SiteHeaderNav({
               >
                 {item.label}
               </NavigationMenuLink>
+            </NavigationMenuItem>
+          ) : (
+            <NavigationMenuItem key={item.label}>
+              <span
+                aria-disabled="true"
+                className={cn(itemClass, "cursor-default gap-2")}
+              >
+                {item.label}
+                <Badge variant="secondary">{comingSoonLabel}</Badge>
+              </span>
             </NavigationMenuItem>
           ),
         )}

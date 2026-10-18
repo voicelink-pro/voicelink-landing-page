@@ -44,36 +44,36 @@ export function VoiceLinkCenterSection() {
         </RevealGroup>
 
         <RevealGroup>
-          <RevealItem className="mt-10 overflow-hidden rounded-3xl sm:mt-12">
+          <RevealItem className="mt-8 overflow-hidden rounded-2xl sm:mt-12 sm:rounded-3xl">
             <Image
               src={image.src}
               alt={image.alt}
-              width={1687}
-              height={932}
+              width={3420}
+              height={1894}
               className="h-auto w-full"
-              sizes="(min-width: 1280px) 1120px, (min-width: 640px) calc(100vw - 5rem), calc(100vw - 3rem)"
+              sizes="(min-width: 1280px) 1120px, (min-width: 640px) calc(100vw - 5rem), calc(100vw - 2.5rem)"
               unoptimized
             />
           </RevealItem>
         </RevealGroup>
 
-        <RevealList className="mt-6 grid grid-cols-3 gap-2 border-t border-foreground/10 pt-6 text-center sm:mt-8 sm:gap-6 sm:pt-8">
+        <RevealList className="mt-6 grid grid-cols-3 gap-2 border-t border-foreground/10 pt-5 text-center sm:mt-8 sm:gap-6 sm:pt-8">
           {stats.map((stat) => (
             <RevealListItem
               key={stat.label}
-              className="text-lg font-normal tracking-[-0.03em] text-balance sm:text-3xl"
+              className="text-sm leading-snug font-normal tracking-[-0.03em] text-balance sm:text-2xl lg:text-3xl"
             >
               {stat.label}
             </RevealListItem>
           ))}
         </RevealList>
 
-        <RevealGroup className="mt-7 flex justify-center">
+        <RevealGroup className="mt-6 flex justify-center sm:mt-7">
           <RevealItem>
             <Link
               className={cn(
                 buttonVariants({ variant: "link" }),
-                "h-auto px-0 text-base text-eyebrow hover:text-eyebrow",
+                "h-auto px-0 text-center text-sm text-eyebrow hover:text-eyebrow sm:text-base",
               )}
               href={more.href}
             >

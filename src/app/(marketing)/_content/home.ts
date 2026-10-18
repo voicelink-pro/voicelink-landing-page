@@ -30,7 +30,7 @@ export const homeContent = {
     description:
       "VoiceLink to asystent głosowy AI, który odbiera telefony, umawia wizyty i odpowiada na pytania pacjentów. Działa zgodnie z zasadami Twojej placówki, wspierając rejestrację także po godzinach.",
     listen: {
-      imageSrc: "/play.png",
+      imageSrc: "/play.webp",
       audioSrc: "/test-call.mp3",
       title: "Posłuchaj rozmowy pacjenta z Asystentem VoiceLink",
       subtitle:
@@ -88,6 +88,15 @@ export const homeContent = {
     phonePlaceholder: "Numer telefonu",
     submitLabel: "Zadzwoń do mnie",
     note: "Zapytaj o terminy, umów wizytę w jednej z trzech testowych placówek, uzyskaj informacje na temat placówki, lekarzy i wykonywanych usług.",
+  },
+  assistantCall: {
+    calling: "Łączymy z Asystentem…",
+    pendingLabel: "Łączenie…",
+    success: "Asystent dzwoni. Odbierz połączenie.",
+    invalid: "Wpisz 9 cyfr numeru telefonu.",
+    failed: "Nie udało się rozpocząć połączenia. Spróbuj ponownie.",
+    unavailable: "Test połączenia jest chwilowo niedostępny.",
+    limited: "Odczekaj chwilę przed kolejną próbą.",
   },
   audience: {
     eyebrow: "Zastosowania",

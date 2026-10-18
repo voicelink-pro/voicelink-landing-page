@@ -44,8 +44,13 @@ export function SiteHeader() {
       pathname === "/jak-to-dziala/funkcje" ||
       pathname === "/jak-to-dziala/proces-wspolpracy" ||
       pathname === "/cennik" ||
+      pathname === "/kalkulator-oszczednosci" ||
+      pathname === "/kalkulator" ||
       pathname === "/voicelink-center" ||
-      pathname === "/kontakt") &&
+      pathname === "/blog" ||
+      pathname.startsWith("/blog/") ||
+      pathname === "/kontakt" ||
+      pathname === "/przetestuj") &&
     !isScrolled;
 
   useClientLayoutEffect(() => {
@@ -83,7 +88,7 @@ export function SiteHeader() {
     >
       <div
         className={cn(
-          "flex h-[var(--site-header-height)] w-full items-center gap-3 rounded-b-3xl border-b px-4 motion-safe:transition-[background-color,border-color,box-shadow] motion-safe:duration-500 motion-safe:ease-out sm:px-6",
+          "flex h-[var(--site-header-height)] w-full items-center gap-2 rounded-b-3xl border-b px-3 motion-safe:transition-[background-color,border-color,box-shadow] motion-safe:duration-500 motion-safe:ease-out sm:gap-3 sm:px-6",
           isScrolled
             ? "border-border bg-white/92 shadow-[0_14px_36px_-22px_rgba(15,55,132,0.55)] backdrop-blur-md"
             : "border-transparent bg-transparent shadow-none",
@@ -91,7 +96,7 @@ export function SiteHeader() {
       >
         <Link
           aria-label={siteConfig.name}
-          className="ms-3 grid shrink-0 sm:ms-6 lg:ms-8"
+          className="ms-1.5 grid shrink-0 sm:ms-4 lg:ms-8"
           href="/"
         >
           <Image
@@ -100,7 +105,7 @@ export function SiteHeader() {
             width={siteConfig.logo.navy.width}
             height={siteConfig.logo.navy.height}
             className={cn(
-              "col-start-1 row-start-1 h-7 w-auto motion-safe:transition-opacity motion-safe:duration-500 motion-safe:ease-out",
+              "col-start-1 row-start-1 h-6 w-auto motion-safe:transition-opacity motion-safe:duration-500 motion-safe:ease-out sm:h-7",
               onHero && "opacity-0",
             )}
             sizes="170px"
@@ -113,7 +118,7 @@ export function SiteHeader() {
             width={siteConfig.logo.white.width}
             height={siteConfig.logo.white.height}
             className={cn(
-              "col-start-1 row-start-1 h-7 w-auto motion-safe:transition-opacity motion-safe:duration-500 motion-safe:ease-out",
+              "col-start-1 row-start-1 h-6 w-auto motion-safe:transition-opacity motion-safe:duration-500 motion-safe:ease-out sm:h-7",
               !onHero && "opacity-0",
             )}
             sizes="170px"
@@ -122,29 +127,25 @@ export function SiteHeader() {
           />
         </Link>
         <SiteHeaderNav
-          className="hidden min-w-0 flex-1 justify-center lg:flex"
+          className="hidden min-w-0 flex-1 justify-center xl:flex"
           itemClassName={onHero ? heroNavItemClassName : undefined}
         />
-        <div className="ml-auto flex shrink-0 items-center gap-2">
+        <div className="ml-auto flex shrink-0 items-center gap-1.5 sm:gap-2">
           <Button
             className={cn(
-              "hidden motion-safe:duration-500 motion-safe:ease-out motion-safe:hover:-translate-y-0.5 lg:inline-flex",
+              "hidden motion-safe:duration-500 motion-safe:ease-out motion-safe:hover:-translate-y-0.5 xl:inline-flex",
               onHero && "text-white hover:bg-white/10 hover:text-white",
             )}
+            nativeButton={false}
+            render={<a href={headerActions.login.href} />}
             size="sm"
             variant="ghost"
           >
             {headerActions.login.label}
           </Button>
-          <SiteHeaderMobileMenu
-            className={cn(
-              "size-9 motion-safe:duration-500 motion-safe:ease-out motion-safe:hover:-translate-y-0.5 lg:hidden",
-              onHero && "text-white hover:bg-white/10 hover:text-white",
-            )}
-          />
           <Button
             className={cn(
-              "me-3 px-3 motion-safe:duration-500 motion-safe:ease-out motion-safe:hover:-translate-y-0.5 sm:me-6 sm:px-4 lg:me-8",
+              "h-8 px-3 text-xs motion-safe:duration-500 motion-safe:ease-out motion-safe:hover:-translate-y-0.5 sm:h-9 sm:px-4 sm:text-[0.8rem] xl:me-8",
               onHero && "bg-black text-white hover:bg-black/85",
             )}
             nativeButton={false}
@@ -153,6 +154,12 @@ export function SiteHeader() {
           >
             {headerActions.meeting.label}
           </Button>
+          <SiteHeaderMobileMenu
+            className={cn(
+              "me-1 size-9 motion-safe:duration-500 motion-safe:ease-out motion-safe:hover:-translate-y-0.5 sm:me-4 xl:hidden",
+              onHero && "text-white hover:bg-white/10 hover:text-white",
+            )}
+          />
         </div>
       </div>
     </header>

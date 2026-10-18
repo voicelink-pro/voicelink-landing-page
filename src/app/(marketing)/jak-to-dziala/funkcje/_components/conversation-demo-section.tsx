@@ -46,8 +46,8 @@ export function ConversationDemoSection() {
             </RevealItem>
           </RevealGroup>
 
-          <RevealGroup delay={0.08}>
-            <RevealItem className="editorial-panel relative overflow-hidden bg-[#163056] bg-[image:var(--conversation-demo-background-image)] bg-cover bg-center px-6 py-10 text-center text-white sm:px-10 sm:py-12">
+          <RevealGroup className="w-full max-w-xl lg:max-w-none" delay={0.08}>
+            <RevealItem className="editorial-panel relative overflow-hidden bg-[#163056] bg-[image:var(--conversation-demo-background-image)] bg-cover bg-center px-5 py-6 text-center text-white sm:px-8 sm:py-8 lg:px-10 lg:py-10">
               <div
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-0 bg-black/55"
@@ -56,17 +56,17 @@ export function ConversationDemoSection() {
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-0 bg-[#0f3784]/50 mix-blend-soft-light"
               />
-              <div className="relative z-10 flex flex-col items-center gap-6">
+              <div className="relative z-10 flex flex-col items-center gap-4 sm:gap-5">
                 <Image
                   src={siteConfig.logo.white.src}
                   alt={siteConfig.name}
                   width={siteConfig.logo.white.width}
                   height={siteConfig.logo.white.height}
-                  className="h-8 w-auto sm:h-9"
-                  sizes="200px"
+                  className="h-6 w-auto sm:h-7 lg:h-8"
+                  sizes="180px"
                   unoptimized
                 />
-                <p className="subsection-title max-w-md text-xl text-white sm:text-2xl">
+                <p className="subsection-title max-w-md text-lg text-white sm:text-xl lg:text-2xl">
                   {boxTitle}
                 </p>
                 <ConversationPlayer
@@ -75,15 +75,18 @@ export function ConversationDemoSection() {
                   src={audioSrc}
                   unavailableMessage={unavailableMessage}
                 />
-                <div className="flex w-full flex-col items-center gap-3 border-t border-white/25 pt-5">
-                  <p className="max-w-sm text-sm leading-6 text-pretty text-white">
+                <div className="flex w-full flex-col items-center gap-2 border-t border-white/25 pt-4 sm:gap-2.5 sm:pt-5">
+                  <p className="max-w-sm text-xs leading-5 text-pretty text-white sm:text-sm sm:leading-6">
                     {callPrompt}
                   </p>
                   <a
-                    className="inline-flex items-center gap-2 text-xl font-semibold whitespace-nowrap text-white transition-colors hover:text-white/80"
+                    className="inline-flex items-center gap-2 text-lg font-semibold whitespace-nowrap text-white transition-colors hover:text-white/80 sm:text-xl"
                     href={phoneHref}
                   >
-                    <PhoneIcon aria-hidden="true" className="size-5" />
+                    <PhoneIcon
+                      aria-hidden="true"
+                      className="size-4 sm:size-5"
+                    />
                     {phone}
                   </a>
                 </div>

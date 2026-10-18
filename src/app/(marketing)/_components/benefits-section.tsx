@@ -106,9 +106,9 @@ function ComparisonBox({
   return (
     <RevealGroup className="h-full">
       <RevealItem className="h-full">
-        <Card className="h-full bg-white shadow-none [--card-spacing:--spacing(7)]">
-          <CardHeader className="gap-6">
-            <div className="flex flex-col gap-3">
+        <Card className="h-full bg-white shadow-none [--card-spacing:--spacing(4.5)] sm:[--card-spacing:--spacing(6)] lg:[--card-spacing:--spacing(7)]">
+          <CardHeader className="gap-4 sm:gap-6">
+            <div className="flex flex-col gap-2 sm:gap-3">
               <p
                 className={cn(
                   "text-xs font-medium tracking-[0.14em] uppercase",
@@ -117,12 +117,12 @@ function ComparisonBox({
               >
                 {label}
               </p>
-              <p className="min-h-[2.3em] text-[1.65rem] leading-[1.15] font-medium tracking-[-0.03em] text-pretty text-foreground sm:text-[1.85rem]">
+              <p className="text-xl leading-snug font-medium tracking-[-0.03em] text-pretty text-foreground sm:text-2xl lg:min-h-[2.3em] lg:text-[1.85rem] lg:leading-[1.15]">
                 {title}
               </p>
             </div>
-            <div className="rounded-2xl bg-[#ededed] p-4">
-              <div className="flex min-h-20 items-center gap-3 rounded-xl bg-white px-4 py-4 ring-1 ring-foreground/8">
+            <div className="rounded-2xl bg-[#ededed] p-2.5 sm:p-4">
+              <div className="flex min-h-16 items-center gap-3 rounded-xl bg-white px-3 py-3 ring-1 ring-foreground/8 sm:min-h-20 sm:px-4 sm:py-4">
                 <BenefitIcon icon={featured.icon} tone={tone} />
                 <p className="text-sm leading-6 font-medium text-pretty text-foreground sm:text-base">
                   {featured.title}

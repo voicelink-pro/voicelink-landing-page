@@ -105,14 +105,17 @@ export function FunctionShowcase({
   }
 
   return (
-    <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-24">
+    <div className="grid items-start gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-16 xl:gap-24">
       <RevealGroup>
         <RevealItem>
           <div className="lg:sticky lg:top-[calc(var(--site-header-height)+2rem)]">
-            <div ref={frameRef} className="relative aspect-square">
+            <div
+              ref={frameRef}
+              className="relative mx-auto aspect-[4/3] w-full max-w-xs sm:max-w-sm lg:aspect-square lg:max-w-none"
+            >
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-[8%] rounded-3xl bg-muted"
+                className="pointer-events-none absolute inset-[4%] rounded-2xl bg-muted sm:inset-[6%] sm:rounded-3xl lg:inset-[8%]"
               />
               {items.map((item) => {
                 const isActive = item.title === active.title;
@@ -134,8 +137,8 @@ export function FunctionShowcase({
                         src={item.image}
                         alt=""
                         fill
-                        className="object-contain p-6 sm:p-10"
-                        sizes="(min-width: 1024px) 34rem, calc(100vw - 3rem)"
+                        className="object-contain p-4 sm:p-6 lg:p-10"
+                        sizes="(min-width: 1024px) 34rem, (min-width: 640px) 24rem, 20rem"
                         unoptimized
                         onError={() => {
                           const src = item.image;
@@ -156,9 +159,15 @@ export function FunctionShowcase({
                         }}
                       />
                     ) : item.icon ? (
-                      <FunctionIcon className="size-24" icon={item.icon} />
+                      <FunctionIcon
+                        className="size-16 sm:size-20 lg:size-24"
+                        icon={item.icon}
+                      />
                     ) : (
-                      <LanguagesIcon aria-hidden="true" className="size-16" />
+                      <LanguagesIcon
+                        aria-hidden="true"
+                        className="size-14 sm:size-16"
+                      />
                     )}
                   </div>
                 );
@@ -193,16 +202,16 @@ export function FunctionShowcase({
                   )}
                   value={item.title}
                 >
-                  <AccordionTrigger className="py-3 text-lg font-normal tracking-[-0.02em] [&>svg]:hidden">
-                    <span className="flex items-center gap-4">
+                  <AccordionTrigger className="py-2.5 text-base font-normal tracking-[-0.02em] sm:py-3 sm:text-lg [&>svg]:hidden">
+                    <span className="flex items-center gap-3 sm:gap-4">
                       <ItemIcon item={item} />
                       <span className="text-left text-balance">
                         {item.title}
                       </span>
                     </span>
                   </AccordionTrigger>
-                  <AccordionContent className="pr-2 pb-4 pl-14">
-                    <p className="text-base leading-7 text-pretty text-muted-foreground">
+                  <AccordionContent className="pr-2 pb-3.5 pl-11 sm:pb-4 sm:pl-14">
+                    <p className="text-sm leading-6 text-pretty text-muted-foreground sm:text-base sm:leading-7">
                       {item.description}
                     </p>
                   </AccordionContent>
@@ -218,8 +227,12 @@ export function FunctionShowcase({
 
 function ItemIcon({ item }: { item: FunctionShowcaseItem }) {
   if (item.icon) {
-    return <FunctionIcon className="size-10 shrink-0" icon={item.icon} />;
+    return (
+      <FunctionIcon className="size-8 shrink-0 sm:size-10" icon={item.icon} />
+    );
   }
 
-  return <LanguagesIcon aria-hidden="true" className="size-10 shrink-0" />;
+  return (
+    <LanguagesIcon aria-hidden="true" className="size-8 shrink-0 sm:size-10" />
+  );
 }
