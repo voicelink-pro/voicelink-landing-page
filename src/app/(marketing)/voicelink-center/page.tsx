@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { PageMotion } from "@/components/layout/reveal-motion";
 import { FaqSection } from "@/components/sections/faq-section";
 import { siteConfig, siteUrl } from "@/config/site";
+import { buildBreadcrumbList, serializeJsonLd } from "@/lib/structured-data";
 
 import { AnalyticsSection } from "./_components/analytics-section";
 import { CenterHeroSection } from "./_components/center-hero-section";
@@ -17,30 +18,40 @@ const { title, description, path } = centerContent.metadata;
 export const metadata: Metadata = {
   title,
   description,
-  alternates: siteUrl ? { canonical: path } : undefined,
-  openGraph: siteUrl
-    ? {
-        type: "website",
-        locale: siteConfig.locale,
-        siteName: siteConfig.name,
-        title: `${title} | ${siteConfig.name}`,
-        description,
-        url: path,
-      }
-    : undefined,
+  alternates: { canonical: path },
+  openGraph: {
+    type: "website",
+    locale: siteConfig.locale,
+    siteName: siteConfig.name,
+    title: `${title} | ${siteConfig.name}`,
+    description,
+    url: path,
+    images: [siteConfig.ogImage],
+  },
 };
 
-const faqJsonLd = {
+const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: centerContent.faq.items.map((item) => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.answer,
+  "@graph": [
+    buildBreadcrumbList(
+      [
+        { name: "Strona główna", path: "/" },
+        { name: "VoiceLink Center", path },
+      ],
+      siteUrl,
+    ),
+    {
+      "@type": "FAQPage",
+      mainEntity: centerContent.faq.items.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
     },
-  })),
+  ],
 };
 
 export default function VoiceLinkCenterPage() {
@@ -49,7 +60,7 @@ export default function VoiceLinkCenterPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c"),
+          __html: serializeJsonLd(jsonLd),
         }}
       />
       <CenterHeroSection />

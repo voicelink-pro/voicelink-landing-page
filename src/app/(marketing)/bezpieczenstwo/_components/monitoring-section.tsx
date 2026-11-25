@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Container } from "@/components/layout/container";
 import {
   RevealCluster,
@@ -16,8 +18,15 @@ export function MonitoringSection() {
     <Section
       id={id}
       aria-labelledby="monitoring-heading"
-      className="relative isolate scroll-mt-[var(--site-header-height)] overflow-hidden bg-[image:var(--monitoring-background-image)] bg-cover bg-center py-[calc(var(--section-spacing)+1.5rem)]"
+      className="relative isolate scroll-mt-[var(--site-header-height)] overflow-hidden bg-[#020b24] py-[calc(var(--section-spacing)+1.5rem)]"
     >
+      <Image
+        src="/voicelink-security.webp"
+        alt=""
+        fill
+        className="pointer-events-none object-cover object-center"
+        sizes="100vw"
+      />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[#020b24]/80"

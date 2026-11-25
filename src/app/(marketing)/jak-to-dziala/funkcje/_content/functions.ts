@@ -5,7 +5,7 @@ const meetingCta = {
 
 export const functionsContent = {
   metadata: {
-    title: "Jak działa asystent głosowy VoiceLink?",
+    title: "Funkcje i możliwości asystenta głosowego AI",
     description:
       "Poznaj funkcje asystenta głosowego VoiceLink: obsługę wizyt, SMS-ów, zgłoszeń o receptę, pytań pacjentów i połączeń z rejestracją.",
     path: "/jak-to-dziala/funkcje",

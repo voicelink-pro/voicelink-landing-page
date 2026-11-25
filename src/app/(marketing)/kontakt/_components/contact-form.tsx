@@ -199,7 +199,6 @@ export function ContactForm() {
         height={siteConfig.logo.navy.height}
         className="mx-auto mb-6 h-8 w-auto sm:mb-8 sm:h-9"
         sizes="220px"
-        unoptimized
       />
       {status === "sent" ? (
         <div className="px-2 py-10 text-center" role="status">
@@ -286,7 +285,7 @@ export function ContactForm() {
               >
                 <Input
                   aria-describedby={
-                    errors.phone ? "contact-phone-error" : "contact-phone-hint"
+                    errors.phone ? "contact-phone-error" : undefined
                   }
                   aria-invalid={errors.phone ? true : undefined}
                   autoComplete={form.fields.phone.autoComplete}
@@ -302,14 +301,6 @@ export function ContactForm() {
                   type="tel"
                   value={phone}
                 />
-                {errors.phone ? null : (
-                  <p
-                    className="text-sm text-muted-foreground"
-                    id="contact-phone-hint"
-                  >
-                    {form.phoneHint}
-                  </p>
-                )}
               </ContactField>
               <ContactField
                 error={errors.email}

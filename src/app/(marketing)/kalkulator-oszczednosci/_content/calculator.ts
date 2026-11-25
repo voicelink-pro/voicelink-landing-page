@@ -284,7 +284,7 @@ export function formatPlNumber(
 
 export const calculatorContent = {
   metadata: {
-    title: "Kalkulator oszczędności",
+    title: "Kalkulator oszczędności dla placówki medycznej",
     description:
       "Ustaw dane swojej placówki i sprawdź, ile czasu może odzyskać rejestracja oraz jak ograniczenie nieobecności pacjentów może wpłynąć na miesięczny przychód.",
     path: "/kalkulator-oszczednosci",

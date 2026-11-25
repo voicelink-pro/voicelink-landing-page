@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowDownIcon } from "lucide-react";
 
@@ -24,7 +25,16 @@ export function PricingHeroSection() {
       className="-mt-[calc(var(--site-header-height)-0.75rem)] border-0 bg-background px-3 pt-0 pb-3 sm:px-4 sm:pb-4 lg:px-5 lg:pb-5"
       data-page-hero="compact"
     >
-      <div className="relative flex min-h-[calc(var(--page-hero-height)-1.5rem)] flex-col overflow-hidden rounded-[clamp(1.15rem,1.6vw,1.6rem)] bg-[image:var(--pricing-hero-background-image)] bg-cover bg-center pt-[calc(var(--site-header-height)+1.25rem)] pb-8 sm:min-h-[calc(var(--page-hero-height)-1.75rem)] sm:pt-[calc(var(--site-header-height)+2rem)] sm:pb-12 lg:min-h-[calc(var(--page-hero-height)-2rem)]">
+      <div className="relative flex min-h-[calc(var(--page-hero-height)-1.5rem)] flex-col overflow-hidden rounded-[clamp(1.15rem,1.6vw,1.6rem)] bg-[#071433] pt-[calc(var(--site-header-height)+1.25rem)] pb-8 sm:min-h-[calc(var(--page-hero-height)-1.75rem)] sm:pt-[calc(var(--site-header-height)+2rem)] sm:pb-12 lg:min-h-[calc(var(--page-hero-height)-2rem)]">
+        <Image
+          src="/background-9.webp"
+          alt=""
+          fill
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+          className="pointer-events-none object-cover object-center"
+        />
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 bg-[#020b24]/30"

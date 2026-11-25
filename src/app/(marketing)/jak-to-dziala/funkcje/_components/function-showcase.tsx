@@ -22,6 +22,7 @@ export type FunctionShowcaseItem = {
   description: string;
   icon?: string;
   image?: string;
+  imageAlt?: string;
 };
 
 export function FunctionShowcase({
@@ -135,11 +136,10 @@ export function FunctionShowcase({
                     {item.image && !imageFailed ? (
                       <Image
                         src={item.image}
-                        alt=""
+                        alt={item.imageAlt ?? item.title}
                         fill
                         className="object-contain p-4 sm:p-6 lg:p-10"
                         sizes="(min-width: 1024px) 34rem, (min-width: 640px) 24rem, 20rem"
-                        unoptimized
                         onError={() => {
                           const src = item.image;
 

@@ -1,6 +1,6 @@
 export const homeContent = {
   hero: {
-    heading: "Wirtualny Asystent Głosowy VoiceLink",
+    heading: "Wirtualny asystent głosowy VoiceLink dla placówek medycznych",
     description:
       "VoiceLink to asystent głosowy AI dla placówek medycznych. Obsługuje wiele połączeń naraz, zarządza wizytami i odpowiada na pytania pacjentów – także poza godzinami pracy recepcji.",
     demo: {
@@ -31,6 +31,8 @@ export const homeContent = {
       "VoiceLink to asystent głosowy AI, który odbiera telefony, umawia wizyty i odpowiada na pytania pacjentów. Działa zgodnie z zasadami Twojej placówki, wspierając rejestrację także po godzinach.",
     listen: {
       imageSrc: "/play.webp",
+      imageAlt:
+        "Recepcjonistka medyczna rozmawia przez telefon przy stanowisku rejestracji",
       audioSrc: "/test-call.mp3",
       title: "Posłuchaj rozmowy pacjenta z Asystentem VoiceLink",
       subtitle:
@@ -45,6 +47,7 @@ export const homeContent = {
     },
     more: {
       label: "Sprawdź możliwości VoiceLink.",
+      href: "/jak-to-dziala/funkcje",
     },
   },
   benefits: {
@@ -52,28 +55,39 @@ export const homeContent = {
     heading: "Co zyskujesz dzięki VoiceLink?",
     description:
       "Zobacz, jak VoiceLink zmienia codzienną obsługę telefoniczną placówki.",
+    columns: {
+      area: "Obszar działania",
+      before: "Przed VoiceLink",
+      after: "Z VoiceLink",
+    },
+    areaHeading: "Codzienna praca rejestracji.",
     beforeLabel: "Przed VoiceLink",
     beforeHeading: "Każdy telefon angażuje Twój zespół.",
     afterLabel: "Z VoiceLink",
     afterHeading: "Mniej telefonów. Więcej uwagi dla pacjentów.",
     items: [
       {
+        area: "Dostępność linii",
         title: "„Jesteś 24 w kolejce”",
         afterTitle: "„Już sprawdzam dogodne terminy”",
       },
       {
+        area: "Powtarzalne pytania",
         title: "Powtarzalne pytania zajmują czas rejestracji",
         afterTitle: "Automatyczne udzielanie sprawdzonych informacji",
       },
       {
+        area: "Przypomnienia o wizytach",
         title: "Ręczne wysyłanie przypomnień",
         afterTitle: "Automatyczne przypomnienia i potwierdzenia",
       },
       {
+        area: "Doświadczenie pacjenta",
         title: "Negatywne opinie dotyczące obsługi",
         afterTitle: "Lepsze doświadczenie pacjenta",
       },
       {
+        area: "Zarządzanie kalendarzem",
         title: "Ręczne wprowadzanie wizyt",
         afterTitle: "Pełna automatyzacja kalendarza wizyt",
       },
@@ -108,26 +122,36 @@ export const homeContent = {
         title: "Przychodnie POZ",
         description:
           "VoiceLink umawia, przekłada i odwołuje wizyty, przyjmuje prośby o receptę oraz odpowiada na pytania pacjentów, odciążając codzienną pracę rejestracji.",
+        imageAlt:
+          "Pobranie krwi u pacjenta w gabinecie zabiegowym przychodni POZ",
       },
       {
         title: "Placówki specjalistyczne",
         description:
           "VoiceLink pomaga wybrać odpowiedniego specjalistę i dogodny termin. Obsługuje wiele kalendarzy oraz prowadzi pacjenta przez cały proces rejestracji.",
+        imageAlt:
+          "Lekarz specjalista rozmawia z pacjentką podczas konsultacji w gabinecie",
       },
       {
         title: "Szpitale i centra medyczne",
         description:
           "VoiceLink obsługuje dużą liczbę połączeń i rozpoznaje potrzeby pacjentów. Udziela informacji, a w razie potrzeby przekierowuje rozmowę do pracownika.",
+        imageAlt:
+          "Nowoczesna sala szpitalna z rzędem łóżek i aparaturą medyczną",
       },
       {
         title: "Gabinety\nstomatologiczne",
         description:
           "VoiceLink umawia wizyty i przypomina o ich terminach. Odpowiada na pytania o usługi oraz pomaga pacjentom zmienić rezerwację, odciążając rejestrację.",
+        imageAlt:
+          "Lekarka dentystka przeprowadza badanie pacjentki na fotelu stomatologicznym",
       },
       {
         title: "Gabinety psychoterapeutyczne",
         description:
           "VoiceLink pomaga umówić pierwszą konsultację i kolejne sesje. Informuje o dostępnych terminach, przekłada wizyty oraz odpowiada na pytania organizacyjne.",
+        imageAlt:
+          "Psychoterapeutka z notatnikiem słucha pacjenta podczas sesji w gabinecie",
       },
     ],
     cta: {
@@ -164,7 +188,7 @@ export const homeContent = {
     description:
       "W ramach współpracy osoby odpowiedzialne za nadzór nad Asystentem VoiceLink otrzymują dostęp do panelu statystyk VoiceLinkCenter.",
     image: {
-      src: "/voicelinkcenter.png",
+      src: "/voicelinkcenter-panel.webp",
       alt: "Panel statystyk VoiceLinkCenter",
     },
     stats: [
@@ -258,7 +282,7 @@ export const homeContent = {
         id: "implementation-time",
         question: "Ile trwa wdrożenie?",
         answer:
-          "Standardowe wdrożenie trwa od 2 do 4 tygodni. Dokładny czas zależy od zakresu obsługiwanych spraw, liczby wymaganych integracji oraz dostępności materiałów potrzebnych do przygotowania asystenta.",
+          "Standardowe wdrożenie trwa około 2 tygodni. Dokładny czas zależy od zakresu obsługiwanych spraw, liczby wymaganych integracji oraz dostępności materiałów potrzebnych do przygotowania asystenta.",
       },
       {
         id: "phone-number",

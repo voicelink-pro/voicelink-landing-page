@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Container } from "@/components/layout/container";
 import { RevealGroup, RevealItem } from "@/components/layout/reveal-motion";
 import { Section } from "@/components/layout/section";
@@ -11,7 +13,16 @@ export function TestAssistantSection() {
       className="-mt-[var(--site-header-height)] border-0 bg-transparent p-0"
       data-contact-page=""
     >
-      <div className="relative flex min-h-dvh flex-col bg-[image:var(--contact-background-image)] bg-cover bg-center pt-[var(--site-header-height)]">
+      <div className="relative flex min-h-dvh flex-col bg-[#062059] pt-[var(--site-header-height)]">
+        <Image
+          src="/contact-background.webp"
+          alt=""
+          fill
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+          className="pointer-events-none object-cover object-center"
+        />
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 bg-[#020b24]/45"

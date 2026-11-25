@@ -1,6 +1,6 @@
 export const centerContent = {
   metadata: {
-    title: "VoiceLink Center — statystyki i panel asystenta głosowego",
+    title: "VoiceLink Center — panel i statystyki asystenta",
     description:
       "Poznaj VoiceLink Center: statystyki połączeń, zgłoszenia, nagrania, transkrypcje i raporty. Sprawdzaj skuteczność asystenta oraz wykorzystanie minut.",
     path: "/voicelink-center",
@@ -15,10 +15,10 @@ export const centerContent = {
       href: "#statystyki",
     },
     image: {
-      src: "/voicelinkcenter.png",
+      src: "/voicelinkcenter-panel.webp",
       alt: "Pulpit VoiceLink Center ze statystykami połączeń, minut, skuteczności i umówionych wizyt.",
-      width: 3420,
-      height: 1894,
+      width: 2400,
+      height: 1330,
     },
     imageCaption: "Przykładowy widok pulpitu VoiceLink Center.",
   },
@@ -135,7 +135,7 @@ export const centerContent = {
   },
   faq: {
     eyebrow: "FAQ",
-    heading: "VoiceLink Center - najczęstsze pytania",
+    heading: "Najczęstsze pytania",
     description:
       "Odpowiedzi o panelu, wyniku rozmowy, minutach i zakresie dostępu zespołu.",
     items: [

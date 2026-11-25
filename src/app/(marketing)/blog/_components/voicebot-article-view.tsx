@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRightIcon, ArrowUpRightIcon } from "lucide-react";
 
 import { Container } from "@/components/layout/container";
+import { RevealArticle } from "@/components/layout/reveal-motion";
 import { Section } from "@/components/layout/section";
 import { SectionEyebrow } from "@/components/layout/section-eyebrow";
 import { buttonVariants } from "@/components/ui/button";
@@ -68,6 +69,7 @@ export function VoicebotArticleView() {
         publishedDateLabel={article.publishedDateLabel}
         readingTime={article.readingTime}
         coverImage={article.coverImage}
+        coverAlt={article.coverAlt}
       />
 
       <Section
@@ -114,7 +116,7 @@ export function VoicebotArticleView() {
               </div>
             </ArticleSidebar>
 
-            <article className="order-1 flex min-w-0 flex-col gap-10 lg:col-span-8 lg:col-start-5">
+            <RevealArticle className="order-1 flex min-w-0 flex-col gap-10 lg:col-span-8 lg:col-start-5">
               <div className="flex flex-col gap-4">
                 {article.lead.map((paragraph) => (
                   <p
@@ -567,9 +569,9 @@ export function VoicebotArticleView() {
                   Jak wygląda wdrożenie voicebota w placówce medycznej?
                 </h2>
                 <p className={proseClassName}>
-                  Typowe wdrożenie VoiceLink trwa około czterech tygodni. Termin
-                  zależy przede wszystkim od zakresu obsługi, dostępnej
-                  integracji i sprawności uzgodnień z placówką.
+                  Typowe wdrożenie VoiceLink trwa około 2 tygodni. Termin zależy
+                  przede wszystkim od zakresu obsługi, dostępnej integracji i
+                  sprawności uzgodnień z placówką.
                 </p>
 
                 <div className="flex flex-col gap-4">
@@ -731,7 +733,7 @@ export function VoicebotArticleView() {
                   {article.methodologyNote}
                 </p>
               </section>
-            </article>
+            </RevealArticle>
           </div>
         </Container>
       </Section>

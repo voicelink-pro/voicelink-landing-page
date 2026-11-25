@@ -1,5 +1,7 @@
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
+
+import szpitalImage from "../../../../public/szpital.webp";
 
 import { Container } from "@/components/layout/container";
 import {
@@ -21,8 +23,8 @@ const { eyebrow, heading, description, items, cta } = homeContent.audience;
 const audienceRows = [
   [
     { ...items[0], image: "/poz.webp" },
-    { ...items[1], image: "/specjalistyczne.webp" },
-    { ...items[2], image: "/szpital.webp" },
+    { ...items[1], image: "/specjalistyczna.webp" },
+    { ...items[2], image: szpitalImage },
   ],
   [
     { ...items[3], image: "/stomatologia.webp" },
@@ -37,7 +39,12 @@ function AudienceCard({
   card,
   className,
 }: {
-  card: { title: string; description: string; image: string };
+  card: {
+    title: string;
+    description: string;
+    image: string | StaticImageData;
+    imageAlt: string;
+  };
   className?: string;
 }) {
   return (
@@ -51,11 +58,10 @@ function AudienceCard({
         <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl sm:rounded-3xl">
           <Image
             src={card.image}
-            alt=""
+            alt={card.imageAlt}
             fill
             className="object-cover brightness-75"
-            sizes="(min-width: 1024px) 21rem, (min-width: 640px) 50vw, 100vw"
-            unoptimized
+            sizes="(min-width: 1024px) 21rem, (min-width: 640px) 22rem, calc(100vw - 2.5rem)"
           />
           <div
             aria-hidden="true"
@@ -63,14 +69,14 @@ function AudienceCard({
           />
         </div>
         <div className="relative z-10 flex flex-col gap-2.5 px-5 pt-16 pb-5 sm:gap-3 sm:px-6 sm:pt-20 sm:pb-6 lg:contents">
-          <CardTitle className="subsection-title relative z-10 text-xl text-white [text-shadow:0_1px_10px_rgb(0_0_0/0.45)] sm:text-2xl lg:col-start-1 lg:row-start-2 lg:self-start lg:px-6 lg:pb-3">
+          <CardTitle className="subsection-title relative z-10 text-2xl text-white [text-shadow:0_1px_10px_rgb(0_0_0/0.45)] lg:col-start-1 lg:row-start-2 lg:self-start lg:px-6 lg:pb-3 lg:text-[1.625rem]">
             {card.title.split("\n").map((line) => (
               <span key={line} className="block">
                 {line}
               </span>
             ))}
           </CardTitle>
-          <CardDescription className="relative z-10 text-sm leading-6 text-pretty text-white [text-shadow:0_1px_8px_rgb(0_0_0/0.4)] sm:text-[0.9375rem] sm:leading-7 lg:col-start-1 lg:row-start-3 lg:self-start lg:px-6 lg:pb-6">
+          <CardDescription className="relative z-10 text-base leading-6 text-pretty text-white [text-shadow:0_1px_8px_rgb(0_0_0/0.4)] sm:text-[1.0625rem] sm:leading-7 lg:col-start-1 lg:row-start-3 lg:self-start lg:px-6 lg:pb-6 lg:text-lg lg:leading-7">
             {card.description}
           </CardDescription>
         </div>

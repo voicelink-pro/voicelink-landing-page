@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import { PauseIcon, PlayIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -8,6 +9,7 @@ import { Button } from "@/components/ui/button";
 type CapabilitiesPlayerProps = {
   src: string;
   imageSrc: string;
+  imageAlt: string;
   title: string;
   subtitle: string;
   playLabel: string;
@@ -18,6 +20,7 @@ type CapabilitiesPlayerProps = {
 export function CapabilitiesPlayer({
   src,
   imageSrc,
+  imageAlt,
   title,
   subtitle,
   playLabel,
@@ -29,7 +32,7 @@ export function CapabilitiesPlayer({
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const [elapsed, setElapsed] = useState(0);
-  const [duration, setDuration] = useState(0);
+  const [duration, setDuration] = useState(105.228);
   const [message, setMessage] = useState("");
 
   function updateProgress() {
@@ -81,11 +84,15 @@ export function CapabilitiesPlayer({
   }
 
   return (
-    <figure
-      className="relative flex min-h-[16.5rem] flex-col justify-end overflow-hidden rounded-2xl border border-white/15 bg-primary bg-cover bg-center p-5 text-white sm:min-h-[18.5rem] sm:rounded-3xl sm:p-6 lg:aspect-[10/9] lg:min-h-[21rem] lg:p-7"
-      style={{ backgroundImage: `url("${imageSrc}")` }}
-    >
-      <div aria-hidden="true" className="absolute inset-0 bg-black/40" />
+    <figure className="relative flex min-h-[16.5rem] flex-col justify-end overflow-hidden rounded-2xl border border-white/15 bg-primary p-5 text-white sm:min-h-[18.5rem] sm:rounded-3xl sm:p-6 lg:aspect-[10/9] lg:min-h-[21rem] lg:p-7">
+      <Image
+        src={imageSrc}
+        alt={imageAlt}
+        fill
+        className="pointer-events-none object-cover object-center"
+        sizes="(min-width: 1024px) 27rem, (min-width: 640px) 28rem, calc(100vw - 2.5rem)"
+      />
+      <div aria-hidden="true" className="absolute inset-0 bg-black/55" />
       <figcaption className="relative flex flex-col items-center gap-3.5 text-center sm:gap-4">
         <div className="flex max-w-xs flex-col gap-1.5 sm:max-w-sm sm:gap-2">
           <p className="text-lg leading-snug font-normal tracking-[-0.03em] text-balance text-white sm:text-xl lg:text-2xl lg:leading-tight">
@@ -97,7 +104,7 @@ export function CapabilitiesPlayer({
         </div>
         <audio
           ref={audioRef}
-          preload="metadata"
+          preload="none"
           src={src}
           onDurationChange={updateProgress}
           onEnded={() => {

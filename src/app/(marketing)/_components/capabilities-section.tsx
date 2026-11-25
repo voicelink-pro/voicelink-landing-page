@@ -51,6 +51,7 @@ export function CapabilitiesSection() {
             <RevealGroup>
               <RevealItem>
                 <CapabilitiesPlayer
+                  imageAlt={listen.imageAlt}
                   imageSrc={listen.imageSrc}
                   pauseLabel={listen.pauseLabel}
                   playLabel={listen.playLabel}
@@ -66,7 +67,8 @@ export function CapabilitiesSection() {
             <RevealItem>
               <Button
                 className="h-auto justify-start px-0 text-sm text-eyebrow hover:text-eyebrow sm:text-base"
-                type="button"
+                nativeButton={false}
+                render={<Link href={more.href} />}
                 variant="link"
               >
                 {more.label}

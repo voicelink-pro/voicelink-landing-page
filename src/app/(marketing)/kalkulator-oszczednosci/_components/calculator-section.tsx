@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Container } from "@/components/layout/container";
 import { RevealGroup, RevealItem } from "@/components/layout/reveal-motion";
 import { Section } from "@/components/layout/section";
@@ -15,7 +17,16 @@ export function CalculatorSection() {
       className="-mt-[calc(var(--site-header-height)-0.75rem)] border-0 bg-background px-3 pt-0 pb-3 sm:px-4 sm:pb-4 lg:px-5 lg:pb-5"
       data-page-hero="compact"
     >
-      <div className="relative overflow-hidden rounded-[clamp(1.15rem,1.6vw,1.6rem)] bg-[#071433] bg-[image:var(--calculator-background-image)] bg-cover bg-center pt-[calc(var(--site-header-height)+1.25rem)] pb-10 sm:pt-[calc(var(--site-header-height)+2rem)] sm:pb-14 lg:pb-16">
+      <div className="relative overflow-hidden rounded-[clamp(1.15rem,1.6vw,1.6rem)] bg-[#071433] pt-[calc(var(--site-header-height)+1.25rem)] pb-10 sm:pt-[calc(var(--site-header-height)+2rem)] sm:pb-14 lg:pb-16">
+        <Image
+          src="/calculator-hero.webp"
+          alt=""
+          fill
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+          className="pointer-events-none object-cover object-center"
+        />
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 bg-[#020b24]/30"

@@ -46,7 +46,7 @@ const integrationCards = [
   },
   {
     ...items[4],
-    logo: { src: "/wlasny.webp", width: 1254, height: 1254 },
+    logo: { src: "/wlasny.webp", width: 192, height: 192 },
   },
 ] as const;
 
@@ -55,15 +55,22 @@ export function IntegrationsSection() {
     <Section
       id="integracje"
       aria-labelledby="integrations-heading"
-      className="relative isolate overflow-hidden border-t border-border bg-[image:var(--integrations-background-image)] bg-cover bg-center"
+      className="relative isolate overflow-hidden border-t border-border bg-[#020b24]"
     >
+      <Image
+        src="/background-3.webp"
+        alt=""
+        fill
+        className="pointer-events-none object-cover object-center"
+        sizes="100vw"
+      />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[#020b24]/40"
       />
       <Container className="relative z-10">
-        <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-x-16">
-          <RevealGroup className="flex max-w-xl flex-col gap-4 lg:gap-5">
+        <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:grid-rows-[auto_auto_auto] lg:gap-x-16 lg:gap-y-5">
+          <RevealGroup className="flex max-w-xl flex-col gap-4 lg:col-start-1 lg:row-span-3 lg:grid lg:grid-rows-subgrid lg:gap-5">
             <RevealItem>
               <SectionEyebrow className="bg-white/15 text-white [&_img]:brightness-0 [&_img]:invert">
                 {eyebrow}
@@ -82,12 +89,20 @@ export function IntegrationsSection() {
             </RevealItem>
           </RevealGroup>
 
-          <div className="flex flex-col gap-3 sm:gap-4">
+          <div className="flex flex-col gap-3 sm:gap-4 lg:col-start-2 lg:row-span-2 lg:row-start-2">
             <RevealGroup>
               <RevealItem>
-                <Card className={cn(glassCardClassName, "justify-center")}>
-                  <CardHeader className="gap-4 sm:flex-row sm:items-center sm:gap-6">
-                    <span className="flex h-12 w-36 shrink-0 items-center justify-center rounded-xl bg-white px-2 sm:h-[4.25rem] sm:w-48 sm:px-3">
+                <Card
+                  className={cn(
+                    glassCardClassName,
+                    "justify-center lg:-mt-[calc(var(--card-spacing)+1px)]",
+                  )}
+                >
+                  <CardHeader className="grid-cols-[minmax(0,1fr)_auto] items-start gap-x-4 gap-y-2.5 sm:gap-x-6 sm:gap-y-3">
+                    <CardTitle className="subsection-title col-start-1 row-start-1 self-start text-xl sm:text-2xl lg:text-3xl">
+                      {featured.title}
+                    </CardTitle>
+                    <span className="col-start-2 row-span-2 row-start-1 flex shrink-0 items-center justify-end self-center">
                       <Image
                         src={featuredLogo.src}
                         alt=""
@@ -95,23 +110,17 @@ export function IntegrationsSection() {
                         height={featuredLogo.height}
                         className="h-8 w-auto object-contain sm:h-10"
                         sizes="192px"
-                        unoptimized
                       />
                     </span>
-                    <div className="flex min-w-0 flex-col gap-2.5 sm:gap-3">
-                      <CardTitle className="subsection-title text-xl sm:text-2xl lg:text-3xl">
-                        {featured.title}
-                      </CardTitle>
-                      <ul className="flex flex-wrap gap-1.5 sm:gap-2">
-                        {featured.systems.map((system) => (
-                          <li key={system}>
-                            <span className="inline-flex rounded-lg bg-foreground/4 px-2.5 py-1 text-xs text-muted-foreground sm:px-3 sm:py-1.5 sm:text-sm">
-                              {system}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    <ul className="col-start-1 row-start-2 flex flex-wrap gap-1.5 sm:gap-2">
+                      {featured.systems.map((system) => (
+                        <li key={system}>
+                          <span className="inline-flex rounded-lg bg-foreground/4 px-2.5 py-1 text-xs text-muted-foreground sm:px-3 sm:py-1.5 sm:text-sm">
+                            {system}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
                   </CardHeader>
                 </Card>
               </RevealItem>
@@ -134,7 +143,6 @@ export function IntegrationsSection() {
                             height={item.logo.height}
                             className="h-full w-full object-contain"
                             sizes="48px"
-                            unoptimized
                           />
                         </span>
                       ) : null}

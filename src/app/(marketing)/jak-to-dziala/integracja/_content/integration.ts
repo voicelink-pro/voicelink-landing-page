@@ -5,7 +5,7 @@ const integrationCta = {
 
 export const integrationContent = {
   metadata: {
-    title: "Integracje VoiceLink z systemami medycznymi i terminarzami",
+    title: "Integracje z systemami medycznymi i terminarzami",
     description:
       "VoiceLink łączy asystenta głosowego z terminarzem placówki: sprawdza wolne terminy oraz umawia, zmienia i odwołuje wizyty w używanym systemie.",
     path: "/jak-to-dziala/integracja",

@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect } from "react";
-import Lenis, { type LenisOptions } from "lenis";
+import type Lenis from "lenis";
+import type { LenisOptions } from "lenis";
 
 import "lenis/dist/lenis.css";
 
 const reducedMotionQuery = "(prefers-reduced-motion: reduce)";
+const finePointerQuery = "(pointer: fine)";
 
 // Mniejsze `lerp` wydłuża wyhamowanie. Mniejsze `wheelMultiplier` skraca krok kółka.
 const smoothScrollOptions = {
@@ -101,7 +103,10 @@ function releaseInertia(lenis: Lenis) {
 export function SmoothScroll() {
   useEffect(() => {
     const motionPreference = window.matchMedia(reducedMotionQuery);
+    const pointerPreference = window.matchMedia(finePointerQuery);
     let lenis: Lenis | null = null;
+    let isDisposed = false;
+    let isCreating = false;
     let removeListeners = () => {};
 
     const destroy = () => {
@@ -111,12 +116,30 @@ export function SmoothScroll() {
       lenis = null;
     };
 
-    const create = () => {
-      if (lenis || motionPreference.matches) {
+    const create = async () => {
+      if (
+        lenis ||
+        isCreating ||
+        motionPreference.matches ||
+        !pointerPreference.matches
+      ) {
         return;
       }
 
-      const instance = new Lenis(smoothScrollOptions);
+      isCreating = true;
+      const { default: LenisConstructor } = await import("lenis");
+      isCreating = false;
+
+      if (
+        isDisposed ||
+        lenis ||
+        motionPreference.matches ||
+        !pointerPreference.matches
+      ) {
+        return;
+      }
+
+      const instance = new LenisConstructor(smoothScrollOptions);
       lenis = instance;
       let correctingScroll = false;
 
@@ -201,20 +224,23 @@ export function SmoothScroll() {
       };
     };
 
-    const onMotionPreferenceChange = () => {
-      if (motionPreference.matches) {
+    const onPreferenceChange = () => {
+      if (motionPreference.matches || !pointerPreference.matches) {
         destroy();
         return;
       }
 
-      create();
+      void create();
     };
 
-    onMotionPreferenceChange();
-    motionPreference.addEventListener("change", onMotionPreferenceChange);
+    onPreferenceChange();
+    motionPreference.addEventListener("change", onPreferenceChange);
+    pointerPreference.addEventListener("change", onPreferenceChange);
 
     return () => {
-      motionPreference.removeEventListener("change", onMotionPreferenceChange);
+      isDisposed = true;
+      motionPreference.removeEventListener("change", onPreferenceChange);
+      pointerPreference.removeEventListener("change", onPreferenceChange);
       destroy();
     };
   }, []);

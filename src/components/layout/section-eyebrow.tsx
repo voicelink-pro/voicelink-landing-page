@@ -23,8 +23,7 @@ export function SectionEyebrow({ children, className }: SectionEyebrowProps) {
         width={siteConfig.eyebrowIcon.width}
         height={siteConfig.eyebrowIcon.height}
         className="h-3.5 w-auto"
-        sizes="20px"
-        unoptimized
+        sizes="25px"
       />
       <span>{children}</span>
     </p>

@@ -5,7 +5,7 @@ const quoteCta = {
 
 export const pricingContent = {
   metadata: {
-    title: "Cennik asystenta głosowego",
+    title: "Cennik asystenta głosowego dla przychodni",
     description:
       "Jednorazowa opłata za wdrożenie, potem miesięczny abonament. Wycenę dopasowujemy do systemów, funkcji i skali obsługi Twojej placówki.",
     path: "/cennik",
@@ -148,7 +148,7 @@ export const pricingContent = {
         id: "czas-przygotowania",
         question: "Ile trwa przygotowanie asystenta?",
         answer:
-          "Od rozpoczęcia prac do uruchomienia pilotażu zazwyczaj mijają 1–4 tygodnie. Termin zależy od zakresu wdrożenia oraz dostępności potrzebnych danych i dostępów.",
+          "Od rozpoczęcia prac do uruchomienia pilotażu zazwyczaj mija około 2 tygodni. Termin zależy od zakresu wdrożenia oraz dostępności potrzebnych danych i dostępów.",
       },
     ],
   },

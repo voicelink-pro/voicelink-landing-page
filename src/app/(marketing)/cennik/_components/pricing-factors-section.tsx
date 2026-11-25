@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Container } from "@/components/layout/container";
 import {
   RevealGroup,
@@ -17,8 +19,15 @@ export function PricingFactorsSection() {
     <Section
       id={id}
       aria-labelledby="pricing-factors-heading"
-      className="relative isolate scroll-mt-[var(--site-header-height)] overflow-hidden bg-[#020b24] bg-[image:var(--pricing-factors-background-image)] bg-cover bg-center"
+      className="relative isolate scroll-mt-[var(--site-header-height)] overflow-hidden bg-[#020b24]"
     >
+      <Image
+        src="/pricing-hero.webp"
+        alt=""
+        fill
+        className="pointer-events-none object-cover object-center"
+        sizes="100vw"
+      />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[#020b24]/80"

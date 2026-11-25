@@ -9,46 +9,68 @@ const visuals = {
   "Umawianie, przekładanie i odwoływanie wizyt": {
     icon: "/kalendarz.webp",
     image: "/umawianie-wizyty.webp",
+    imageAlt:
+      "Karta wizyty z konsultacją ortopedyczną i opcjami Umów, Przełóż oraz Odwołaj",
   },
   "Automatyczne potwierdzenia i przypomnienia SMS": {
     icon: "/powiadomienia.webp",
     image: "/przypomnienie.webp",
+    imageAlt:
+      "Harmonogram automatycznych wiadomości SMS: potwierdzenie rezerwacji oraz przypomnienie dzień przed wizytą",
   },
   "Potwierdzanie obecności odpowiedzią na SMS": {
     icon: "/TAK.webp",
     image: "/potwierdzenie-tak.webp",
+    imageAlt:
+      "Schemat potwierdzenia obecności na wizycie odpowiedzią SMS „TAK” i aktualizacji statusu w kalendarzu",
   },
   "Odpowiedzi na pytania o placówkę, lekarzy i usługi": {
     icon: "/informacja.webp",
     image: "/baza-wiedzy.webp",
+    imageAlt:
+      "Zakres bazy wiedzy VoiceLink: godziny otwarcia, lekarze, dostępne usługi, przygotowanie do wizyty i adres placówki",
   },
   "Wsparcie w wyborze specjalisty": {
     icon: "/triaz.webp",
     image: "/dobor-spec.webp",
+    imageAlt:
+      "Schemat doboru specjalisty przez asystenta: cel wizyty „Konsultacja kolana” dla osoby dorosłej kierowany do ortopedy",
   },
   "Przyjmowanie zgłoszeń o receptę": {
     icon: "/recepta.webp",
     image: "/recepta-prosba.webp",
+    imageAlt:
+      "Karta zgłoszenia prośby o receptę z danymi pacjenta i nazwą leku przekazywana do zespołu placówki",
   },
   "Rozmowy w różnych językach": {
     icon: "/jezyki.webp",
     image: "/multilan.webp",
+    imageAlt:
+      "Lista obsługiwanych języków rozmów w VoiceLink: polski, ukraiński, niemiecki, francuski, włoski, hiszpański i niderlandzki",
   },
   "Obsługa wielu rozmów jednocześnie": {
     icon: "/telefon.webp",
     image: "/rozmowy-jednoczesnie.webp",
+    imageAlt:
+      "Podgląd 20 równoległych połączeń telefonicznych obsługiwanych jednocześnie przez asystenta VoiceLink",
   },
   "Odbieranie połączeń poza godzinami rejestracji": {
     icon: "/zegar.webp",
     image: "/dostepnosc.webp",
+    imageAlt:
+      "Powiadomienie o połączeniu przychodzącym o 21:30 odebranym przez VoiceLink, gdy rejestracja jest zamknięta",
   },
   "Wsparcie rejestracji, gdy linia jest zajęta": {
     icon: "/wsparcie.webp",
     image: "/zajeta-linia.webp",
+    imageAlt:
+      "Schemat przejęcia nowego połączenia przez asystenta VoiceLink, gdy linia rejestracji jest zajęta",
   },
   "Przekierowanie rozmowy do rejestracji": {
     icon: "/przekierowanie.webp",
     image: "/eskalacja.webp",
+    imageAlt:
+      "Schemat przekierowania rozmowy z asystenta VoiceLink do pracownika rejestracji",
   },
 } as const;
 

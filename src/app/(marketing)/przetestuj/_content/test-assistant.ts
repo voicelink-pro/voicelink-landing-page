@@ -1,8 +1,8 @@
 export const testAssistantContent = {
   metadata: {
-    title: "Porozmawiaj z Asystentem VoiceLink",
+    title: "Przetestuj rozmowę z asystentem głosowym AI",
     description:
-      "Wpisz swój numer telefonu, odbierz połączenie od Asystenta VoiceLink i przetestuj rozmowę na żywo.",
+      "Wpisz swój numer telefonu i odbierz połączenie testowe od Asystenta VoiceLink. Sprawdź na żywo, jak rozmawia z pacjentami i umawia wizyty.",
     path: "/przetestuj",
   },
   eyebrow: "Test na żywo",

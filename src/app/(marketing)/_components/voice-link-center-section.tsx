@@ -48,11 +48,10 @@ export function VoiceLinkCenterSection() {
             <Image
               src={image.src}
               alt={image.alt}
-              width={3420}
-              height={1894}
+              width={2400}
+              height={1330}
               className="h-auto w-full"
               sizes="(min-width: 1280px) 1120px, (min-width: 640px) calc(100vw - 5rem), calc(100vw - 2.5rem)"
-              unoptimized
             />
           </RevealItem>
         </RevealGroup>

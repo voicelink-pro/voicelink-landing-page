@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { PageMotion } from "@/components/layout/reveal-motion";
 import { siteConfig, siteUrl } from "@/config/site";
+import { buildBreadcrumbList, serializeJsonLd } from "@/lib/structured-data";
 
 import { MissedCallsArticleView } from "../_components/missed-calls-article-view";
 import { ReceptionReliefArticleView } from "../_components/reception-relief-article-view";
@@ -77,20 +78,24 @@ export async function generateMetadata({
     title: article.seoTitle,
     description: article.metaDescription,
     authors: [{ name: article.author }],
-    alternates: siteUrl ? { canonical: path } : undefined,
-    openGraph: siteUrl
-      ? {
-          type: "article",
-          locale: siteConfig.locale,
-          siteName: siteConfig.name,
-          title: `${article.seoTitle} | ${siteConfig.name}`,
-          description: article.metaDescription,
-          url: path,
-          publishedTime: article.publishedAt,
-          authors: [article.author],
-          images: [{ url: article.coverImage }],
-        }
-      : undefined,
+    alternates: { canonical: path },
+    openGraph: {
+      type: "article",
+      locale: siteConfig.locale,
+      siteName: siteConfig.name,
+      title: `${article.seoTitle} | ${siteConfig.name}`,
+      description: article.metaDescription,
+      url: path,
+      publishedTime: article.publishedAt,
+      authors: [article.author],
+      images: [{ url: article.coverImage, alt: article.coverAlt }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${article.seoTitle} | ${siteConfig.name}`,
+      description: article.metaDescription,
+      images: [article.coverImage],
+    },
   };
 }
 
@@ -110,13 +115,20 @@ export default async function BlogArticlePage({
   }
 
   const { View, details } = articlePage;
-  const articleUrl = siteUrl
-    ? new URL(`/blog/${article.slug}`, siteUrl).toString()
-    : `/blog/${article.slug}`;
+  const articlePath = `/blog/${article.slug}`;
+  const articleUrl = new URL(articlePath, siteUrl).toString();
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
+      buildBreadcrumbList(
+        [
+          { name: "Strona główna", path: "/" },
+          { name: "Blog", path: "/blog" },
+          { name: article.title, path: articlePath },
+        ],
+        siteUrl,
+      ),
       {
         "@type": "BlogPosting",
         headline: article.seoTitle,
@@ -125,9 +137,7 @@ export default async function BlogArticlePage({
         dateModified: article.publishedAt,
         inLanguage: "pl-PL",
         url: articleUrl,
-        image: siteUrl
-          ? new URL(article.coverImage, siteUrl).toString()
-          : article.coverImage,
+        image: new URL(article.coverImage, siteUrl).toString(),
         author: {
           "@type": "Organization",
           name: article.author,
@@ -165,7 +175,7 @@ export default async function BlogArticlePage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+          __html: serializeJsonLd(jsonLd),
         }}
       />
       <View />

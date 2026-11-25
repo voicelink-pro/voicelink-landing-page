@@ -23,11 +23,11 @@ export function TryAssistantSection() {
     <Section
       id="jak-to-dziala"
       aria-labelledby="trial-heading"
-      className="border-t border-border bg-muted py-[clamp(2.75rem,5vw,4.5rem)]"
+      className="border-t border-border bg-muted pt-[var(--section-spacing)] pb-0"
     >
       <Container>
-        <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-20 xl:gap-32">
-          <RevealGroup className="flex max-w-xl flex-col gap-4">
+        <div className="grid items-start gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-20 xl:gap-32">
+          <RevealGroup className="flex max-w-xl flex-col gap-4 self-start pb-2 lg:pb-[clamp(3rem,6vw,6rem)]">
             <RevealItem>
               <SectionEyebrow>{eyebrow}</SectionEyebrow>
             </RevealItem>
@@ -51,18 +51,17 @@ export function TryAssistantSection() {
             </RevealItem>
           </RevealGroup>
           <RevealGroup
-            className="flex justify-center lg:justify-end"
+            className="-mt-6 flex justify-center self-end sm:-mt-8 lg:-mt-14 lg:justify-end"
             delay={0.12}
           >
             <RevealItem>
               <Image
                 src="/zadzwon.webp"
                 alt="Podgląd rozmowy z Asystentem VoiceLink na telefonie"
-                width={1000}
-                height={2000}
-                className="h-auto max-h-[21rem] w-auto max-w-full object-contain sm:max-h-[26rem] lg:max-h-[32rem]"
-                sizes="(min-width: 1024px) 17rem, (min-width: 640px) 14rem, 12rem"
-                unoptimized
+                width={900}
+                height={1201}
+                className="block h-auto w-[18rem] max-w-full sm:w-[21rem] lg:w-[24rem]"
+                sizes="(min-width: 1024px) 24rem, (min-width: 640px) 21rem, 18rem"
               />
             </RevealItem>
           </RevealGroup>

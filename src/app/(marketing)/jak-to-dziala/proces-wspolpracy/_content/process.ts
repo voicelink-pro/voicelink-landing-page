@@ -5,7 +5,7 @@ const meetingCta = {
 
 export const processContent = {
   metadata: {
-    title: "Wdrożenie asystenta głosowego — proces współpracy",
+    title: "Proces współpracy i wdrożenie asystenta AI",
     description:
       "Poznaj proces wdrożenia VoiceLink: analiza potrzeb, konfiguracja, integracje i testy. Miesięczny pilotaż, dopasowany abonament i stałe wsparcie.",
     path: "/jak-to-dziala/proces-wspolpracy",
@@ -77,13 +77,13 @@ export const processContent = {
     eyebrow: "Harmonogram",
     heading: "Ile trwa uruchomienie VoiceLink?",
     stat: {
-      value: "2-4",
+      value: "2",
       unit: "tygodnie",
       caption: "Od rozpoczęcia prac do startu pilotażu",
     },
-    emphasis: "od jednego do czterech tygodni",
+    emphasis: "około 2 tygodni",
     paragraphs: [
-      "Od rozpoczęcia prac do startu pilotażu zazwyczaj mijają od jednego do czterech tygodni. Ten czas obejmuje konfigurację asystenta, przygotowanie integracji oraz testy z Twoim zespołem.",
+      "Od rozpoczęcia prac do startu pilotażu zazwyczaj mija około 2 tygodni. Ten czas obejmuje konfigurację asystenta, przygotowanie integracji oraz testy z Twoim zespołem.",
       "Dokładny harmonogram zależy od zakresu projektu i dostępności wymaganych informacji oraz uprawnień. Po przygotowaniu rozwiązania rozpoczynamy miesięczny pilotaż w rzeczywistym środowisku placówki.",
     ],
   },
@@ -164,7 +164,7 @@ export const processContent = {
         id: "czas-do-pilotazu",
         question: "Ile czasu potrzeba, aby rozpocząć pilotaż?",
         answer:
-          "Przygotowanie asystenta, integracji i testów zazwyczaj zajmuje od jednego do czterech tygodni od rozpoczęcia prac. Termin zależy od zakresu wdrożenia oraz dostępności potrzebnych informacji i uprawnień.",
+          "Przygotowanie asystenta, integracji i testów zazwyczaj zajmuje około 2 tygodni od rozpoczęcia prac. Termin zależy od zakresu wdrożenia oraz dostępności potrzebnych informacji i uprawnień.",
       },
       {
         id: "scenariusze-rozmow",

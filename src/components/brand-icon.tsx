@@ -76,7 +76,6 @@ export function BrandIcon({ icon, className, tone, scale }: BrandIconProps) {
       className={cn("block size-10 shrink-0 object-contain", className)}
       style={scaled}
       sizes="40px"
-      unoptimized
     />
   );
 }

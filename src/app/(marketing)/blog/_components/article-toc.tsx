@@ -32,8 +32,7 @@ export function ArticleToc({ items }: { items: readonly ArticleTocItem[] }) {
             width={siteConfig.eyebrowIcon.width}
             height={siteConfig.eyebrowIcon.height}
             className="h-3.5 w-auto"
-            sizes="20px"
-            unoptimized
+            sizes="25px"
           />
           <span>Spis treści</span>
         </span>

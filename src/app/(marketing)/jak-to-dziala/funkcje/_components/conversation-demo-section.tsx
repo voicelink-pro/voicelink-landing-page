@@ -47,7 +47,14 @@ export function ConversationDemoSection() {
           </RevealGroup>
 
           <RevealGroup className="w-full max-w-xl lg:max-w-none" delay={0.08}>
-            <RevealItem className="editorial-panel relative overflow-hidden bg-[#163056] bg-[image:var(--conversation-demo-background-image)] bg-cover bg-center px-5 py-6 text-center text-white sm:px-8 sm:py-8 lg:px-10 lg:py-10">
+            <RevealItem className="editorial-panel relative overflow-hidden bg-[#163056] px-5 py-6 text-center text-white sm:px-8 sm:py-8 lg:px-10 lg:py-10">
+              <Image
+                src="/test-call.webp"
+                alt=""
+                fill
+                className="pointer-events-none object-cover object-center"
+                sizes="(min-width: 1024px) 44rem, calc(100vw - 2.5rem)"
+              />
               <div
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-0 bg-black/55"
@@ -64,7 +71,6 @@ export function ConversationDemoSection() {
                   height={siteConfig.logo.white.height}
                   className="h-6 w-auto sm:h-7 lg:h-8"
                   sizes="180px"
-                  unoptimized
                 />
                 <p className="subsection-title max-w-md text-lg text-white sm:text-xl lg:text-2xl">
                   {boxTitle}

@@ -1,16 +1,12 @@
 import type { CSSProperties } from "react";
+import Image from "next/image";
+import { CheckIcon, XIcon } from "lucide-react";
 
 import { Container } from "@/components/layout/container";
-import {
-  RevealGroup,
-  RevealItem,
-  RevealList,
-  RevealListItem,
-} from "@/components/layout/reveal-motion";
+import { RevealGroup, RevealItem } from "@/components/layout/reveal-motion";
 import { Section } from "@/components/layout/section";
 import { SectionEyebrow } from "@/components/layout/section-eyebrow";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
+import { siteConfig } from "@/config/site";
 
 import { homeContent } from "../_content/home";
 
@@ -18,9 +14,9 @@ const {
   eyebrow,
   heading,
   description,
-  beforeLabel,
+  columns,
+  areaHeading,
   beforeHeading,
-  afterLabel,
   afterHeading,
   items,
 } = homeContent.benefits;
@@ -34,10 +30,29 @@ const benefitIcons = [
 ] as const;
 
 const rows = items.map((item, index) => ({
+  area: item.area,
   before: item.title,
   after: item.afterTitle,
   icon: benefitIcons[index],
 }));
+
+function AreaIcon({ icon }: { icon: string }) {
+  const mask = {
+    maskImage: `url("${icon}")`,
+    WebkitMaskImage: `url("${icon}")`,
+    maskRepeat: "no-repeat",
+    maskPosition: "center",
+    maskSize: "contain",
+  } satisfies CSSProperties;
+
+  return (
+    <span
+      aria-hidden="true"
+      className="block size-5 shrink-0 bg-primary lg:size-6"
+      style={mask}
+    />
+  );
+}
 
 export function BenefitsSection() {
   return (
@@ -63,124 +78,140 @@ export function BenefitsSection() {
           </RevealItem>
         </RevealGroup>
 
-        <div className="mt-10 grid items-stretch gap-4 lg:mt-14 lg:grid-cols-2 lg:gap-5">
-          <ComparisonBox
-            items={rows.map((row) => ({
-              title: row.before,
-              icon: row.icon,
-            }))}
-            label={beforeLabel}
-            title={beforeHeading}
-            tone="before"
-          />
-          <ComparisonBox
-            items={rows.map((row) => ({ title: row.after, icon: row.icon }))}
-            label={afterLabel}
-            title={afterHeading}
-            tone="after"
-          />
-        </div>
+        <RevealGroup className="mt-10 lg:mt-14" delay={0.06}>
+          <RevealItem>
+            <div className="overflow-hidden rounded-3xl bg-white ring-1 ring-foreground/8">
+              <table className="w-full border-collapse text-left">
+                <caption className="sr-only">
+                  Porównanie obsługi telefonicznej w placówce przed wdrożeniem i
+                  z VoiceLink
+                </caption>
+                <thead className="hidden md:table-header-group">
+                  <tr>
+                    <th
+                      scope="col"
+                      className="w-[27%] border-b border-border px-6 py-6 align-top lg:px-8 lg:py-7"
+                    >
+                      <span className="inline-flex items-center rounded-full bg-secondary px-3 py-1 text-xs font-semibold tracking-[0.14em] text-muted-foreground uppercase">
+                        {columns.area}
+                      </span>
+                      <span className="mt-2.5 block text-base leading-snug font-medium tracking-[-0.02em] text-pretty text-foreground lg:text-lg">
+                        {areaHeading}
+                      </span>
+                    </th>
+                    <th
+                      scope="col"
+                      className="w-[34%] border-b border-l border-border bg-benefit-before/[0.04] px-6 py-6 align-top lg:px-8 lg:py-7"
+                    >
+                      <span className="inline-flex items-center rounded-full bg-benefit-before/10 px-3 py-1 text-xs font-semibold tracking-[0.14em] text-benefit-before uppercase">
+                        {columns.before}
+                      </span>
+                      <span className="mt-2.5 block text-base leading-snug font-medium tracking-[-0.02em] text-pretty text-foreground/85 lg:text-lg">
+                        {beforeHeading}
+                      </span>
+                    </th>
+                    <th
+                      scope="col"
+                      className="w-[39%] border-b border-white/15 bg-primary px-6 py-6 align-top lg:px-8 lg:py-7"
+                    >
+                      <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold tracking-[0.14em] text-white uppercase ring-1 ring-white/25">
+                        <Image
+                          src={siteConfig.eyebrowIcon.src}
+                          alt=""
+                          width={16}
+                          height={10}
+                          className="h-2.5 w-4 shrink-0 object-contain brightness-0 invert"
+                          sizes="16px"
+                        />
+                        {columns.after}
+                      </span>
+                      <span className="mt-2.5 block text-base leading-snug font-medium tracking-[-0.02em] text-pretty text-white lg:text-lg">
+                        {afterHeading}
+                      </span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border md:divide-y-0">
+                  {rows.map((row, index) => {
+                    const isLast = index === rows.length - 1;
+
+                    return (
+                      <tr
+                        key={row.area}
+                        className="flex flex-col gap-3 p-5 md:table-row md:p-0"
+                      >
+                        <th
+                          scope="row"
+                          className={`text-left md:w-[27%] md:px-6 md:py-6 md:align-middle lg:px-8 lg:py-7 ${
+                            isLast ? "" : "md:border-b md:border-border"
+                          }`}
+                        >
+                          <div className="flex items-center gap-3.5">
+                            <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-secondary lg:size-11">
+                              <AreaIcon icon={row.icon} />
+                            </span>
+                            <span className="text-base leading-snug font-medium tracking-[-0.02em] text-foreground lg:text-[1.0625rem]">
+                              {row.area}
+                            </span>
+                          </div>
+                        </th>
+                        <td
+                          className={`rounded-2xl bg-benefit-before/[0.04] p-4 ring-1 ring-benefit-before/12 md:w-[34%] md:rounded-none md:border-l md:border-border md:px-6 md:py-6 md:align-middle md:ring-0 lg:px-8 lg:py-7 ${
+                            isLast ? "" : "md:border-b md:border-border"
+                          }`}
+                        >
+                          <span className="mb-1.5 block text-[0.6875rem] font-semibold tracking-[0.14em] text-benefit-before uppercase md:hidden">
+                            {columns.before}
+                          </span>
+                          <div className="flex items-start gap-3">
+                            <span
+                              aria-hidden="true"
+                              className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-benefit-before/12 text-benefit-before"
+                            >
+                              <XIcon className="size-3.5 stroke-[2.5]" />
+                            </span>
+                            <p className="text-sm leading-6 text-pretty text-foreground/80 sm:text-base lg:text-[1.0625rem] lg:leading-7">
+                              {row.before}
+                            </p>
+                          </div>
+                        </td>
+                        <td
+                          className={`rounded-2xl bg-primary p-4 md:w-[39%] md:rounded-none md:px-6 md:py-6 md:align-middle lg:px-8 lg:py-7 ${
+                            isLast ? "" : "md:border-b md:border-white/15"
+                          }`}
+                        >
+                          <span className="mb-1.5 inline-flex items-center gap-1.5 text-[0.6875rem] font-semibold tracking-[0.14em] text-white/90 uppercase md:hidden">
+                            <Image
+                              src={siteConfig.eyebrowIcon.src}
+                              alt=""
+                              width={14}
+                              height={9}
+                              className="h-2.5 w-3.5 shrink-0 object-contain brightness-0 invert"
+                              sizes="14px"
+                            />
+                            {columns.after}
+                          </span>
+                          <div className="flex items-start gap-3">
+                            <span
+                              aria-hidden="true"
+                              className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-white text-primary"
+                            >
+                              <CheckIcon className="size-3.5 stroke-[2.75]" />
+                            </span>
+                            <p className="text-sm leading-6 font-medium text-pretty text-white sm:text-base lg:text-[1.0625rem] lg:leading-7">
+                              {row.after}
+                            </p>
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </RevealItem>
+        </RevealGroup>
       </Container>
     </Section>
-  );
-}
-
-function ComparisonBox({
-  items,
-  label,
-  title,
-  tone,
-}: {
-  items: { title: string; icon: string }[];
-  label: string;
-  title: string;
-  tone: "before" | "after";
-}) {
-  const isAfter = tone === "after";
-  const [featured, ...rest] = items;
-
-  if (!featured) {
-    return null;
-  }
-
-  return (
-    <RevealGroup className="h-full">
-      <RevealItem className="h-full">
-        <Card className="h-full bg-white shadow-none [--card-spacing:--spacing(4.5)] sm:[--card-spacing:--spacing(6)] lg:[--card-spacing:--spacing(7)]">
-          <CardHeader className="gap-4 sm:gap-6">
-            <div className="flex flex-col gap-2 sm:gap-3">
-              <p
-                className={cn(
-                  "text-xs font-medium tracking-[0.14em] uppercase",
-                  isAfter ? "text-primary" : "text-benefit-before",
-                )}
-              >
-                {label}
-              </p>
-              <p className="text-xl leading-snug font-medium tracking-[-0.03em] text-pretty text-foreground sm:text-2xl lg:min-h-[2.3em] lg:text-[1.85rem] lg:leading-[1.15]">
-                {title}
-              </p>
-            </div>
-            <div className="rounded-2xl bg-[#ededed] p-2.5 sm:p-4">
-              <div className="flex min-h-16 items-center gap-3 rounded-xl bg-white px-3 py-3 ring-1 ring-foreground/8 sm:min-h-20 sm:px-4 sm:py-4">
-                <BenefitIcon icon={featured.icon} tone={tone} />
-                <p className="text-sm leading-6 font-medium text-pretty text-foreground sm:text-base">
-                  {featured.title}
-                </p>
-              </div>
-            </div>
-          </CardHeader>
-          <CardContent>
-            <RevealList className="flex flex-col">
-              {rest.map((item) => (
-                <RevealListItem
-                  key={item.title}
-                  className="flex items-center gap-2.5 border-t border-border py-3.5 first:border-t-0 first:pt-1"
-                >
-                  <BenefitIcon icon={item.icon} size="sm" tone={tone} />
-                  <p className="text-sm leading-5 font-medium text-pretty text-foreground">
-                    {item.title}
-                  </p>
-                </RevealListItem>
-              ))}
-            </RevealList>
-          </CardContent>
-        </Card>
-      </RevealItem>
-    </RevealGroup>
-  );
-}
-
-function BenefitIcon({
-  icon,
-  size = "md",
-  tone,
-}: {
-  icon: string;
-  size?: "sm" | "md";
-  tone: "before" | "after";
-}) {
-  const mask = {
-    maskImage: `url("${icon}")`,
-    WebkitMaskImage: `url("${icon}")`,
-    maskRepeat: "no-repeat",
-    maskPosition: "center",
-    maskSize: "contain",
-  } satisfies CSSProperties;
-
-  return (
-    <span
-      aria-hidden="true"
-      className={cn(
-        "flex shrink-0 items-center justify-center rounded-full text-white",
-        size === "sm" ? "size-8" : "size-10",
-        tone === "after" ? "bg-primary" : "bg-benefit-before",
-      )}
-    >
-      <span
-        className={cn("block bg-current", size === "sm" ? "size-5" : "size-6")}
-        style={mask}
-      />
-    </span>
   );
 }

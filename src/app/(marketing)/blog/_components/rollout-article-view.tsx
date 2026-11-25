@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRightIcon } from "lucide-react";
 
 import { Container } from "@/components/layout/container";
+import { RevealArticle } from "@/components/layout/reveal-motion";
 import { Section } from "@/components/layout/section";
 import { SectionEyebrow } from "@/components/layout/section-eyebrow";
 import { buttonVariants } from "@/components/ui/button";
@@ -50,6 +51,7 @@ export function RolloutArticleView() {
         publishedDateLabel={article.publishedDateLabel}
         readingTime={article.readingTime}
         coverImage={article.coverImage}
+        coverAlt={article.coverAlt}
       />
 
       <Section
@@ -96,7 +98,7 @@ export function RolloutArticleView() {
               </div>
             </ArticleSidebar>
 
-            <article className="order-1 flex min-w-0 flex-col gap-10 lg:col-span-8 lg:col-start-5">
+            <RevealArticle className="order-1 flex min-w-0 flex-col gap-10 lg:col-span-8 lg:col-start-5">
               <div className="flex flex-col gap-4">
                 {article.lead.map((paragraph, index) => (
                   <p
@@ -584,7 +586,7 @@ export function RolloutArticleView() {
                   ))}
                 </div>
               </section>
-            </article>
+            </RevealArticle>
           </div>
         </Container>
       </Section>

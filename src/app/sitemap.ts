@@ -2,45 +2,43 @@ import type { MetadataRoute } from "next";
 
 import { siteUrl } from "@/config/site";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  if (!siteUrl) {
-    return [];
-  }
+const SITE_LAST_MODIFIED = new Date("2026-11-25");
 
+export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: siteUrl.toString(),
-      lastModified: new Date(),
+      lastModified: SITE_LAST_MODIFIED,
       changeFrequency: "monthly",
       priority: 1,
     },
     {
       url: new URL("/kontakt", siteUrl).toString(),
-      lastModified: new Date(),
+      lastModified: SITE_LAST_MODIFIED,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: new URL("/przetestuj", siteUrl).toString(),
-      lastModified: new Date(),
+      lastModified: SITE_LAST_MODIFIED,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: new URL("/cennik", siteUrl).toString(),
-      lastModified: new Date(),
+      lastModified: SITE_LAST_MODIFIED,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: new URL("/kalkulator-oszczednosci", siteUrl).toString(),
-      lastModified: new Date(),
+      lastModified: SITE_LAST_MODIFIED,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: new URL("/blog", siteUrl).toString(),
-      lastModified: new Date(),
+      lastModified: SITE_LAST_MODIFIED,
       changeFrequency: "weekly",
       priority: 0.8,
     },
@@ -94,31 +92,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: new URL("/voicelink-center", siteUrl).toString(),
-      lastModified: new Date(),
+      lastModified: SITE_LAST_MODIFIED,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: new URL("/bezpieczenstwo", siteUrl).toString(),
-      lastModified: new Date(),
+      lastModified: SITE_LAST_MODIFIED,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: new URL("/jak-to-dziala/funkcje", siteUrl).toString(),
-      lastModified: new Date(),
+      lastModified: SITE_LAST_MODIFIED,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: new URL("/jak-to-dziala/integracja", siteUrl).toString(),
-      lastModified: new Date(),
+      lastModified: SITE_LAST_MODIFIED,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: new URL("/jak-to-dziala/proces-wspolpracy", siteUrl).toString(),
-      lastModified: new Date(),
+      lastModified: SITE_LAST_MODIFIED,
       changeFrequency: "monthly",
       priority: 0.8,
     },

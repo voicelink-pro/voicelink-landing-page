@@ -5,7 +5,7 @@ const securityCta = {
 
 export const securityContent = {
   metadata: {
-    title: "Bezpieczeństwo danych pacjentów",
+    title: "Bezpieczeństwo danych pacjentów i rozmów AI",
     description:
       "Zabezpieczenia komunikacji, kontrola dostępu i zasady przechowywania danych pacjentów podczas pracy asystenta głosowego i korzystania z panelu VoiceLink Center.",
     path: "/bezpieczenstwo",

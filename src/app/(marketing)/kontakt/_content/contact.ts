@@ -1,8 +1,8 @@
 export const contactContent = {
   metadata: {
-    title: "Kontakt",
+    title: "Kontakt i bezpłatna konsultacja wdrożenia",
     description:
-      "Wypełnij formularz, a odezwiemy się do Ciebie wkrótce. Umów rozmowę o VoiceLink dla swojej placówki.",
+      "Skontaktuj się z zespołem VoiceLink i umów krótką rozmowę o wdrożeniu asystenta głosowego AI w Twojej placówce medycznej. Odpowiadamy szybko i konkretnie.",
     path: "/kontakt",
   },
   heading: "Rozpocznij",
@@ -13,7 +13,6 @@ export const contactContent = {
     requiredError: "To pole jest wymagane.",
     emailError: "Podaj poprawny adres e-mail.",
     phoneError: "Podaj 9 cyfr albo numer z prefiksem, np. +48 600 100 200.",
-    phoneHint: "9 cyfr albo numer z prefiksem, np. +48.",
     submitError: "Nie udało się wysłać wiadomości. Spróbuj ponownie za chwilę.",
     limitedError: "Za dużo prób. Spróbuj ponownie za kilka minut.",
     successTitle: "Dziękujemy",

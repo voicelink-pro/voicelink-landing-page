@@ -40,7 +40,10 @@ const pageLinks = mainNavigation.flatMap((item) =>
 const footerColumns: readonly FooterColumn[] = [
   {
     title: assistant.label,
-    links: linksWithHref(assistant.items),
+    links: [
+      ...linksWithHref(assistant.items),
+      { label: "Przetestuj asystenta", href: "/przetestuj" },
+    ],
   },
   {
     title: rollout.label,
@@ -48,7 +51,7 @@ const footerColumns: readonly FooterColumn[] = [
   },
   {
     title: "Placówka",
-    links: pageLinks,
+    links: [...pageLinks, { label: "Kontakt", href: "/kontakt" }],
   },
 ];
 

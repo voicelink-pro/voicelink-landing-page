@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Container } from "@/components/layout/container";
 import {
   RevealGroup,
@@ -23,8 +25,15 @@ export function FacilityValueSection() {
     <Section
       id={id}
       aria-labelledby="center-value-heading"
-      className="relative isolate scroll-mt-[var(--site-header-height)] overflow-hidden border-white/10 bg-[#020b24] bg-[image:var(--center-value-background-image)] bg-cover bg-center"
+      className="relative isolate scroll-mt-[var(--site-header-height)] overflow-hidden border-white/10 bg-[#020b24]"
     >
+      <Image
+        src="/voicelinkcenter-hero.webp"
+        alt=""
+        fill
+        className="pointer-events-none object-cover object-center"
+        sizes="100vw"
+      />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(2,11,36,0.88)_0%,rgba(2,11,36,0.8)_48%,rgba(2,11,36,0.86)_100%)]"

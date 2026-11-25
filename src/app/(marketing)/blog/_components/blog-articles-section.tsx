@@ -46,11 +46,10 @@ export function BlogArticlesSection() {
                 <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl sm:rounded-3xl">
                   <Image
                     src={article.coverImage}
-                    alt=""
+                    alt={article.coverAlt}
                     fill
                     className="object-cover brightness-90 transition-transform duration-500 ease-out motion-safe:group-hover/card:scale-[1.03]"
                     sizes="(min-width: 1024px) 23rem, (min-width: 640px) 50vw, 100vw"
-                    unoptimized
                   />
                   <div
                     aria-hidden="true"

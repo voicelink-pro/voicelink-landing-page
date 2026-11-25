@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Container } from "@/components/layout/container";
 import {
   RevealCluster,
@@ -39,8 +41,15 @@ export function DurationSection() {
     <Section
       id="czas-uruchomienia"
       aria-labelledby="duration-heading"
-      className="relative isolate scroll-mt-[var(--site-header-height)] overflow-hidden bg-[image:var(--duration-background-image)] bg-cover bg-center"
+      className="relative isolate scroll-mt-[var(--site-header-height)] overflow-hidden bg-[#020b24]"
     >
+      <Image
+        src="/harmonogram.webp"
+        alt=""
+        fill
+        className="pointer-events-none object-cover object-center"
+        sizes="100vw"
+      />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[#020b24]/50"

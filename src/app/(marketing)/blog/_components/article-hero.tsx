@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeftIcon, CalendarIcon, ClockIcon, UserIcon } from "lucide-react";
 
 import { Container } from "@/components/layout/container";
+import { RevealGroup, RevealItem } from "@/components/layout/reveal-motion";
 import { Section } from "@/components/layout/section";
 import { cn } from "@/lib/utils";
 
@@ -13,6 +14,7 @@ type ArticleHeroProps = {
   publishedDateLabel: string;
   readingTime: string;
   coverImage: string;
+  coverAlt: string;
   coverPosition?: string;
 };
 
@@ -23,6 +25,7 @@ export function ArticleHero({
   publishedDateLabel,
   readingTime,
   coverImage,
+  coverAlt,
   coverPosition = "object-center",
 }: ArticleHeroProps) {
   return (
@@ -35,10 +38,10 @@ export function ArticleHero({
         <div className="relative h-[clamp(7.5rem,28vw,24.5rem)] w-full bg-[#071433]">
           <Image
             src={coverImage}
-            alt=""
+            alt={coverAlt}
             fill
             priority
-            unoptimized
+            fetchPriority="high"
             className={cn("object-cover", coverPosition)}
             sizes="100vw"
           />
@@ -48,38 +51,51 @@ export function ArticleHero({
           />
         </div>
 
-        <Container className="flex flex-col items-start gap-4 py-6 sm:py-8">
-          <nav aria-label="Ścieżka nawigacji">
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted px-3.5 py-1.5 text-xs font-medium text-foreground transition-colors hover:bg-white"
-            >
-              <ArrowLeftIcon aria-hidden="true" className="size-3.5" />
-              <span>Wróć do bloga</span>
-            </Link>
-          </nav>
-
-          <h1
-            id="article-hero-heading"
-            className="max-w-4xl text-[clamp(1.85rem,2.2vw+1rem,3.15rem)] leading-[1.08] font-normal tracking-[-0.04em] text-balance text-foreground"
+        <Container className="py-6 sm:py-8">
+          <RevealGroup
+            className="flex flex-col items-start gap-4"
+            delay={0.04}
+            stagger={0.07}
+            trigger="load"
           >
-            {title}
-          </h1>
+            <RevealItem>
+              <nav aria-label="Ścieżka nawigacji">
+                <Link
+                  href="/blog"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted px-3.5 py-1.5 text-xs font-medium text-foreground transition-colors hover:bg-white"
+                >
+                  <ArrowLeftIcon aria-hidden="true" className="size-3.5" />
+                  <span>Wróć do bloga</span>
+                </Link>
+              </nav>
+            </RevealItem>
 
-          <div className="flex flex-wrap items-center gap-2.5 text-xs font-medium text-foreground/80 sm:gap-3 sm:text-sm">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1">
-              <UserIcon aria-hidden="true" className="size-3.5" />
-              <span>{author}</span>
-            </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1">
-              <CalendarIcon aria-hidden="true" className="size-3.5" />
-              <time dateTime={publishedAt}>{publishedDateLabel}</time>
-            </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1">
-              <ClockIcon aria-hidden="true" className="size-3.5" />
-              <span>{readingTime}</span>
-            </span>
-          </div>
+            <RevealItem>
+              <h1
+                id="article-hero-heading"
+                className="max-w-4xl text-[clamp(1.85rem,2.2vw+1rem,3.15rem)] leading-[1.08] font-normal tracking-[-0.04em] text-balance text-foreground"
+              >
+                {title}
+              </h1>
+            </RevealItem>
+
+            <RevealItem>
+              <div className="flex flex-wrap items-center gap-2.5 text-xs font-medium text-foreground/80 sm:gap-3 sm:text-sm">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1">
+                  <UserIcon aria-hidden="true" className="size-3.5" />
+                  <span>{author}</span>
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1">
+                  <CalendarIcon aria-hidden="true" className="size-3.5" />
+                  <time dateTime={publishedAt}>{publishedDateLabel}</time>
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1">
+                  <ClockIcon aria-hidden="true" className="size-3.5" />
+                  <span>{readingTime}</span>
+                </span>
+              </div>
+            </RevealItem>
+          </RevealGroup>
         </Container>
       </div>
     </Section>

@@ -46,7 +46,7 @@ const systemCards = [
   },
   {
     ...items[4],
-    logo: { src: "/wlasny.webp", width: 1254, height: 1254 },
+    logo: { src: "/wlasny.webp", width: 192, height: 192 },
   },
 ] as const;
 
@@ -85,7 +85,6 @@ export function SystemsSection() {
                       height={featuredLogo.height}
                       className="h-8 w-auto object-contain sm:h-10"
                       sizes="192px"
-                      unoptimized
                     />
                   </span>
                   <div className="flex min-w-0 flex-col gap-2.5 sm:gap-3">
@@ -125,7 +124,6 @@ export function SystemsSection() {
                         height={item.logo.height}
                         className="size-8 object-contain sm:size-10"
                         sizes="56px"
-                        unoptimized
                       />
                     </span>
                     <CardTitle>

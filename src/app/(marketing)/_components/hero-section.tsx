@@ -1,3 +1,6 @@
+import Image from "next/image";
+
+import heroBackground from "../../../../public/hero-background.webp";
 import { Container } from "@/components/layout/container";
 import { RevealGroup, RevealItem } from "@/components/layout/reveal-motion";
 import { Section } from "@/components/layout/section";
@@ -13,10 +16,19 @@ export function HeroSection() {
       aria-labelledby="hero-heading"
       className="-mt-[calc(var(--site-header-height)-0.75rem)] border-0 bg-background px-3 pt-0 pb-3 sm:px-4 sm:pb-4 lg:px-5 lg:pb-5"
     >
-      <div className="relative flex min-h-[calc(100svh-1.5rem)] flex-col overflow-hidden rounded-[clamp(1.15rem,1.6vw,1.6rem)] bg-[image:var(--page-background-image)] bg-cover bg-center pt-[calc(var(--site-header-height)+clamp(1.75rem,5svh,5rem))] pb-[clamp(2rem,6svh,5rem)] sm:min-h-[calc(100svh-1.75rem)] lg:min-h-[calc(100svh-2rem)]">
+      <div className="relative flex min-h-[calc(100svh-1.5rem)] flex-col overflow-hidden rounded-[clamp(1.15rem,1.6vw,1.6rem)] bg-[#071433] pt-[calc(var(--site-header-height)+clamp(1.75rem,5svh,5rem))] pb-[clamp(2rem,6svh,5rem)] sm:min-h-[calc(100svh-1.75rem)] lg:min-h-[calc(100svh-2rem)]">
+        <Image
+          src={heroBackground}
+          alt=""
+          fill
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+          className="pointer-events-none object-cover object-[position:center_top]"
+        />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[#020b24]/40"
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(2,11,36,0.78)_0%,rgba(2,11,36,0.74)_52%,rgba(2,11,36,0.84)_100%)]"
         />
         <Container className="relative z-10 flex flex-1 flex-col text-[#d5d5d5]">
           <RevealGroup
@@ -26,7 +38,10 @@ export function HeroSection() {
             trigger="load"
           >
             <RevealItem>
-              <h1 id="hero-heading" className="display-title text-white">
+              <h1
+                id="hero-heading"
+                className="display-title leading-[1.16]! text-white"
+              >
                 {heading}
               </h1>
             </RevealItem>

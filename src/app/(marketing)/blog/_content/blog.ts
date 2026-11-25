@@ -35,6 +35,7 @@ export type BlogArticleSummary = {
   publishedDateLabel: string;
   readingTime: string;
   coverImage: string;
+  coverAlt: string;
   lead: readonly string[];
 };
 
@@ -67,7 +68,7 @@ export const blogContent = {
   articles: [
     {
       slug: "ile-kosztuja-nieodebrane-telefony-w-placowce-medycznej",
-      seoTitle: "Ile kosztują nieodebrane telefony w placówce medycznej?",
+      seoTitle: "Ile kosztują nieodebrane telefony w przychodni?",
       metaDescription:
         "Sprawdź, jak oszacować koszt nieodebranych telefonów w przychodni. Poznaj przykład wyliczenia i sposoby na poprawę obsługi pacjentów.",
       title: "Ile kosztują nieodebrane telefony w placówce medycznej?",
@@ -76,6 +77,7 @@ export const blogContent = {
       publishedDateLabel: "17 października 2026",
       readingTime: "6 min czytania",
       coverImage: "/nieodebrane-polaczenia.webp",
+      coverAlt: "Pusta lada rejestracji w nowoczesnej placówce medycznej",
       lead: [
         "Nieodebrane telefony mogą oznaczać dla prywatnej przychodni mniej umówionych wizyt, trudności z odwoływaniem terminów i dodatkową pracę rejestracji. Ich koszt zależy jednak od tego, ilu pacjentów rzeczywiście pozostało bez obsługi i jaka część tych spraw mogła zakończyć się płatną wizytą. Przy cenie 300 zł już 20 niezrealizowanych wizyt to 6000 zł potencjalnego przychodu.",
         "Żeby oszacować tę kwotę dla swojej placówki, trzeba zajrzeć głębiej niż do licznika nieodebranych połączeń. Poniżej pokazujemy, jakie dane zebrać, jak wykonać obliczenie i co zmienić, gdy telefon staje się wąskim gardłem rejestracji.",
@@ -83,7 +85,7 @@ export const blogContent = {
     },
     {
       slug: "jak-odciazyc-rejestracje-medyczna",
-      seoTitle: "Jak odciążyć rejestrację medyczną bez nowego etatu?",
+      seoTitle: "Jak odciążyć rejestrację medyczną bez etatu?",
       metaDescription:
         "Jak odciążyć rejestrację medyczną? Sprawdź, co zautomatyzować, jak policzyć odzyskany czas i kiedy rozmowę z pacjentem powinien przejąć człowiek.",
       title:
@@ -93,6 +95,8 @@ export const blogContent = {
       publishedDateLabel: "17 października 2026",
       readingTime: "7 min czytania",
       coverImage: "/odciazenie.webp",
+      coverAlt:
+        "Pracowniczka placówki medycznej w białym fartuchu rozmawia przez telefon przy laptopie",
       lead: [
         "Odciążenie rejestracji medycznej warto zacząć od zadań, które powtarzają się każdego dnia: umawiania i potwierdzania wizyt, zmian terminów, odpowiedzi na pytania oraz wysyłania informacji o płatności. Część tych czynności można zautomatyzować, a pozostałe lepiej rozdzielić w zespole. Dzięki temu pracownicy odzyskują czas na pacjentów obecnych w placówce i sprawy wymagające ich uwagi.",
         "Dla właściciela prywatnej przychodni oznacza to możliwość obsłużenia większego ruchu przy obecnej obsadzie. Żeby ocenić, czy pozwoli to uniknąć kolejnego etatu, trzeba jednak sprawdzić, ile pracy rzeczywiście znika z rejestracji i w jakich godzinach.",
@@ -109,6 +113,8 @@ export const blogContent = {
       publishedDateLabel: "17 października 2026",
       readingTime: "8 min czytania",
       coverImage: "/voicebot-jakdziala.webp",
+      coverAlt:
+        "Procesor z symbolem fali głosowej VoiceLink na ciemnoniebieskiej płytce elektronicznej",
       lead: [
         "Voicebot medyczny to asystent głosowy AI, który rozmawia z pacjentami przez telefon i wykonuje uzgodnione zadania związane z obsługą placówki. Może umawiać, zmieniać i odwoływać wizyty, odpowiadać na pytania oraz kontaktować się z pacjentami w sprawie potwierdzenia terminu. Jego możliwości zależą od konfiguracji i połączenia z systemami przychodni.",
         "Dla pacjenta kontakt może wyglądać bardzo prosto: dzwoni pod znany numer, mówi, czego potrzebuje, wybiera termin i otrzymuje SMS. Po stronie placówki za taką rozmową stoją ustalone zasady rezerwacji, dostęp do terminarza i sposób przekazywania spraw pracownikom.",
@@ -126,6 +132,8 @@ export const blogContent = {
       publishedDateLabel: "17 października 2026",
       readingTime: "8 min czytania",
       coverImage: "/ograniczenie.webp",
+      coverAlt:
+        "Przeszklona fasada nowoczesnego budynku kliniki medycznej na tle nieba",
       lead: [
         "O dziewiątej miał przyjść pacjent. Lekarz jest gotowy, gabinet przygotowany, ale w poczekalni nikogo nie ma. Rejestracja próbuje się dodzwonić i dopiero wtedy dowiaduje się, że wizyta jest już nieaktualna. Na zaproszenie kolejnej osoby często zostaje za mało czasu.",
         "Żeby ograniczyć liczbę nieodwołanych wizyt, warto połączyć przypomnienia, potwierdzanie obecności i prostą możliwość rezygnacji lub zmiany terminu. Pacjent powinien wiedzieć, kiedy ma przyjść, móc łatwo odpowiedzieć i otrzymać pomoc, jeśli dotychczasowy termin przestał mu odpowiadać.",
@@ -134,7 +142,7 @@ export const blogContent = {
     },
     {
       slug: "ile-kosztuje-voicebot-medyczny",
-      seoTitle: "Ile kosztuje voicebot medyczny? Cena i opłacalność",
+      seoTitle: "Ile kosztuje voicebot medyczny? Cennik i zwrot",
       metaDescription:
         "Wdrożenie VoiceLink kosztuje standardowo 3000 zł brutto. Sprawdź koszty rozmów, SMS i integracji oraz policz, kiedy voicebot się opłaca.",
       title:
@@ -144,6 +152,8 @@ export const blogContent = {
       publishedDateLabel: "17 października 2026",
       readingTime: "9 min czytania",
       coverImage: "/cena-voicelink.webp",
+      coverAlt:
+        "Nowoczesny korytarz w przychodni medycznej z przeszklonymi gabinetami",
       lead: [
         "Standardowe wdrożenie VoiceLink kosztuje 3000 zł brutto. Późniejsze rozliczenie zależy od wykorzystania: w podstawowym pakiecie minuta rozmowy kosztuje 0,60 zł brutto, a SMS 0,20 zł brutto. Przy większym wolumenie rozmów stawka minutowa jest ustalana na niższym poziomie.",
         "Do pełnego budżetu trzeba doliczyć koszty zewnętrzne, jeśli są potrzebne w danej placówce. Mogą to być dostęp do API systemu medycznego, telefonia i serwer integracyjny.",
@@ -162,6 +172,8 @@ export const blogContent = {
       publishedDateLabel: "17 października 2026",
       readingTime: "8 min czytania",
       coverImage: "/wdrozenie.webp",
+      coverAlt:
+        "Niebieska wizualizacja danych i kodu symbolizująca proces wdrożenia systemu AI",
       lead: [
         "Czy asystent będzie wiedział, do którego lekarza zapisać pacjenta? Jak poradzi sobie ze zmianą terminu? Co się stanie, jeśli rozmówca będzie potrzebował pomocy rejestracji? Przed uruchomieniem automatycznej obsługi telefonicznej właściciele placówek mają wiele konkretnych pytań.",
         "Wdrożenie powinno na nie odpowiedzieć jeszcze przed pierwszymi rozmowami z pacjentami.",

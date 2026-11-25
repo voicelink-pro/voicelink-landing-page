@@ -591,7 +591,6 @@ export function TestAssistantBox() {
           height={siteConfig.logo.navy.height}
           className="mb-5 h-7 w-auto sm:mb-6 sm:h-8"
           sizes="200px"
-          unoptimized
         />
         <SectionEyebrow>{eyebrow}</SectionEyebrow>
         <h1

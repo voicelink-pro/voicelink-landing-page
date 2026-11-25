@@ -108,9 +108,8 @@ export function SiteHeader() {
               "col-start-1 row-start-1 h-6 w-auto motion-safe:transition-opacity motion-safe:duration-500 motion-safe:ease-out sm:h-7",
               onHero && "opacity-0",
             )}
-            sizes="170px"
-            unoptimized
-            priority
+            sizes="(min-width: 640px) 168px, 143px"
+            priority={!onHero}
           />
           <Image
             src={siteConfig.logo.white.src}
@@ -121,9 +120,8 @@ export function SiteHeader() {
               "col-start-1 row-start-1 h-6 w-auto motion-safe:transition-opacity motion-safe:duration-500 motion-safe:ease-out sm:h-7",
               !onHero && "opacity-0",
             )}
-            sizes="170px"
-            unoptimized
-            priority
+            sizes="(min-width: 640px) 168px, 143px"
+            priority={onHero}
           />
         </Link>
         <SiteHeaderNav

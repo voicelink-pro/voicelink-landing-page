@@ -16,7 +16,6 @@ export function CenterPanel() {
           className="h-auto w-full"
           sizes="(min-width: 1280px) 1240px, calc(100vw - 2.5rem)"
           priority
-          unoptimized
         />
       </div>
       <figcaption className="text-sm leading-6 text-white/85">
