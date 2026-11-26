@@ -1,5 +1,6 @@
-import Image from "next/image";
+import { getImageProps } from "next/image";
 
+import heroBackgroundMobile from "../../../../public/hero-background-mobile.webp";
 import heroBackground from "../../../../public/hero-background.webp";
 import { Container } from "@/components/layout/container";
 import { RevealGroup, RevealItem } from "@/components/layout/reveal-motion";
@@ -11,21 +12,47 @@ import { AssistantCallForm } from "./assistant-call-form";
 export function HeroSection() {
   const { heading, description, demo, stats } = homeContent.hero;
 
+  const commonImageProps = {
+    alt: "",
+    fill: true,
+    priority: true,
+    fetchPriority: "high" as const,
+    sizes: "100vw",
+  };
+
+  const {
+    props: { srcSet: mobileSrcSet },
+  } = getImageProps({
+    ...commonImageProps,
+    src: heroBackgroundMobile,
+  });
+
+  const {
+    props: { srcSet: desktopSrcSet, ...desktopImgProps },
+  } = getImageProps({
+    ...commonImageProps,
+    src: heroBackground,
+  });
+
   return (
     <Section
       aria-labelledby="hero-heading"
       className="-mt-[calc(var(--site-header-height)-0.75rem)] border-0 bg-background px-3 pt-0 pb-3 sm:px-4 sm:pb-4 lg:px-5 lg:pb-5"
     >
       <div className="relative flex min-h-[calc(100svh-1.5rem)] flex-col overflow-hidden rounded-[clamp(1.15rem,1.6vw,1.6rem)] bg-[#071433] pt-[calc(var(--site-header-height)+clamp(1.75rem,5svh,5rem))] pb-[clamp(2rem,6svh,5rem)] sm:min-h-[calc(100svh-1.75rem)] lg:min-h-[calc(100svh-2rem)]">
-        <Image
-          src={heroBackground}
-          alt=""
-          fill
-          priority
-          fetchPriority="high"
-          sizes="100vw"
-          className="pointer-events-none object-cover object-[position:center_top]"
-        />
+        <picture className="pointer-events-none">
+          <source
+            media="(max-width: 767px) and (orientation: portrait)"
+            srcSet={mobileSrcSet}
+            sizes="100vw"
+          />
+          <source srcSet={desktopSrcSet} sizes="100vw" />
+          <img
+            {...desktopImgProps}
+            alt=""
+            className="pointer-events-none object-cover object-[position:center_top] max-md:portrait:object-center"
+          />
+        </picture>
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(2,11,36,0.78)_0%,rgba(2,11,36,0.74)_52%,rgba(2,11,36,0.84)_100%)]"

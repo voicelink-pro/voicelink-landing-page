@@ -22,13 +22,33 @@ const { eyebrow, heading, description, items, cta } = homeContent.audience;
 
 const audienceRows = [
   [
-    { ...items[0], image: "/poz.webp" },
-    { ...items[1], image: "/specjalistyczna.webp" },
-    { ...items[2], image: szpitalImage },
+    {
+      ...items[0],
+      image: "/poz.webp",
+      imageClassName: "object-top",
+    },
+    {
+      ...items[1],
+      image: "/specjalistyczna.webp",
+      imageClassName: "object-top",
+    },
+    {
+      ...items[2],
+      image: szpitalImage,
+      imageClassName: "object-center",
+    },
   ],
   [
-    { ...items[3], image: "/stomatologia.webp" },
-    { ...items[4], image: "/psychoterapia.webp" },
+    {
+      ...items[3],
+      image: "/stomatologia.webp",
+      imageClassName: "object-top",
+    },
+    {
+      ...items[4],
+      image: "/psychoterapia.webp",
+      imageClassName: "object-top",
+    },
   ],
 ] as const;
 
@@ -44,6 +64,7 @@ function AudienceCard({
     description: string;
     image: string | StaticImageData;
     imageAlt: string;
+    imageClassName: string;
   };
   className?: string;
 }) {
@@ -54,13 +75,13 @@ function AudienceCard({
         className,
       )}
     >
-      <Card className="relative h-full gap-0 overflow-visible border-0 bg-neutral-950 py-0 text-white shadow-none max-lg:min-h-[19rem] max-lg:justify-end sm:max-lg:min-h-[21rem] lg:row-span-3 lg:grid lg:grid-rows-subgrid">
+      <Card className="relative h-full gap-0 overflow-visible border-0 bg-neutral-950 py-0 text-white shadow-none max-lg:aspect-[4/5] max-lg:justify-end lg:row-span-3 lg:grid lg:grid-rows-subgrid">
         <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl sm:rounded-3xl">
           <Image
             src={card.image}
             alt={card.imageAlt}
             fill
-            className="object-cover brightness-75"
+            className={cn("object-cover brightness-75", card.imageClassName)}
             sizes="(min-width: 1024px) 21rem, (min-width: 640px) 22rem, calc(100vw - 2.5rem)"
           />
           <div
